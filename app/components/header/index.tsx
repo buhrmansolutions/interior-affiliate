@@ -45,22 +45,22 @@ export default function Layout() {
             <div className="desktop-headings-container">
                 {headings.map(({ heading, path }) =>
                     <Link href={path} key={heading}>
-                        <h2>
+                        <h5>
                             {heading}
-                        </h2>
+                        </h5>
                         {path === pathname && <div className='active-indicator' />}
                     </Link>)}
             </div>
             <div className={`mobile-headings-container ${showHamburgerMenu ? "active" : "inActive"}`}>
                 {headings.map(({ heading, path }) =>
                     <Link href={path} key={heading} onClick={() => setShowHamburgerMenu(false)}>
-                        <h2>
+                        <h5>
                             {path === pathname ?
                                 <b>
                                     {heading}
                                 </b> : heading
                             }
-                        </h2>
+                        </h5>
                     </Link>)}
             </div>
             <div className='empty-element' />

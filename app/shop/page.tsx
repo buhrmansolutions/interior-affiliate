@@ -1,4 +1,5 @@
 import Filter from "../components/filter"
+import "./style.css"
 
 export default function Home() {
   return <div>

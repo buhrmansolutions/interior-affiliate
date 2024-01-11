@@ -3,17 +3,35 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background: #FFFFFF;
-  --grey: #D8D8D8;
+  --accent: #B4A186;
+  --white: #FBFBFB;
+  --black: #0A0A0A;
+  --light-gray: #9A9A9A;
+  --gray: #3D3D3D;
+  --dark-gray: #272727;
+  --error: #D82700
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: var(--background);
+  color: rgb(var(--black));
+  background: var(--white);
   padding: 0px 100px;
+  font-weight: 400;
 }
 
+h1{
+  font-size: 33px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+
+.medium{
+  font-weight: 500;
+}
+.bold{
+  font-weight: 700;
+}
 
 
 @media only screen and (max-width: 600px) {

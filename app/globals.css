@@ -30,6 +30,7 @@ body {
   background: var(--white);
   font-weight: var(--regular-weight);
   padding: 0px 100px;
+  font-size: var(--body-medium-size);
 }
 
 svg {

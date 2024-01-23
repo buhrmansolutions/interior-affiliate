@@ -1,110 +1,145 @@
 .filter {
-    width: 300px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--body-large-size);
 }
 
-
-
-.input-container{
-    display: flex;
-    position: relative;
+.input-container {
+  display: flex;
+  position: relative;
 }
-.input-container > svg{
-    position: absolute;
-    right: 0;
+.input-container > svg {
+  position: absolute;
+  right: 0;
 }
-
 
 #slider-distance {
-    position: relative;
-    margin-top: var(--margin-large);
-    height: 14px;
-    display: flex;
-    align-items: center;
+  position: relative;
+  height: 14px;
+  display: flex;
+  align-items: center;
 }
-  
- 
-  
-#range {
-    position: absolute;
-    left: 0;
-    height: 2px;
-    background-color: var(--black);
-  }
-  
-.thumb {
-    position: absolute;
-    top: 3px;
-    z-index: 2;
-    height: 10px;
-    width: 2px;
-    background-color: var(--black);
-    }
-  
-input[type=range] {
-    position: absolute;
-    pointer-events: none;
-    -webkit-appearance: none;
-    z-index: 3;
-    height: 14px;
-    top: -6px;
-    width: 100%;
-    opacity: 0;
-    border:none;
-  }
-  
-input[type=range]:focus::-webkit-slider-runnable-track {
-    background: transparent;
-    border: transparent;
-  }
-  
-input[type=range]:focus {
-    outline: none;
-  }
-  
-input[type=range]::-webkit-slider-thumb {
-    pointer-events: all;
-    width: 28px;
-    height: 28px;
-    border-radius: 0px;
-    border: 0 none;
-    -webkit-appearance: none;
-    margin-top: 10px;
-  }
-  
-input[type=range]::-ms-fill-lower {
-    background: transparent;
-    border: 0 none;
-  }
-  
-input[type=range]::-ms-fill-upper {
-    background: transparent;
-    border: 0 none;
-  }
-  
-input[type=range]::-ms-tooltip {
-    display: none;
-  }
-  
 
-#background-range{
+#range {
+  position: absolute;
+  left: 0;
+  height: 2px;
+  background-color: var(--black);
+}
+
+.thumb {
+  position: absolute;
+  top: 3px;
+  z-index: 2;
+  height: 10px;
+  width: 2px;
+  background-color: var(--black);
+}
+
+input[type="range"] {
+  position: absolute;
+  pointer-events: none;
+  -webkit-appearance: none;
+  z-index: 3;
+  height: 14px;
+  top: -6px;
+  width: 100%;
+  opacity: 0;
+  border: none;
+}
+
+input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: transparent;
+  border: transparent;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  pointer-events: all;
+  width: 28px;
+  height: 28px;
+  border-radius: 0px;
+  border: 0 none;
+  -webkit-appearance: none;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+input[type="range"]::-ms-fill-lower {
+  background: transparent;
+  border: 0 none;
+}
+
+input[type="range"]::-ms-fill-upper {
+  background: transparent;
+  border: 0 none;
+}
+
+input[type="range"]::-ms-tooltip {
+  display: none;
+}
+
+#background-range {
   background-color: var(--light-gray);
   height: 2px;
   position: absolute;
   width: 100%;
 }
-#to-handle{
+#to-handle {
   margin-left: -2px;
 }
 
-.label{
+.label {
   color: var(--dark-gray);
   font-size: var(--body-medium-size);
   margin-top: 8px;
 }
 
+.select {
+  width: 100%;
+  padding: var(--body-small-size) var(--body-large-size);
+  border-radius: 4px;
+  border: 1px solid var(--light-gray);
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  cursor: pointer;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.options > button {
+  width: 100%;
+  padding: var(--body-small-size) var(--body-large-size);
+  border-left: 1px solid var(--light-gray);
+  border-right: 1px solid var(--light-gray);
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  cursor: pointer;
+}
+
+.options > button:hover {
+  background-color: var(--light-gray);
+}
+
+.options > button:last-child {
+  border-bottom: 1px solid var(--light-gray);
+  border-right: 1px solid var(--light-gray);
+  border-radius: 0px 0px 4px 4px;
+}
+
 @media only screen and (max-width: 1080px) {
-    .filter{
-        width: 100%;
-        margin-top: var(--margin-large);
-    }
+  .filter {
+    width: 100%;
+    margin-top: var(--margin-large);
+  }
 }

@@ -1,0 +1,20 @@
+.product-container {
+  flex: 1;
+  height: calc(100vh - 99px);
+  overflow: scroll;
+}
+.product-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  gap: var(--margin-large);
+  justify-content: center;
+  padding-top: 96px;
+}
+
+@media only screen and (max-width: 1080px) {
+  .product-grid {
+    grid-template-columns: repeat(auto-fit, 100%);
+    padding-top: 0px;
+  }
+}

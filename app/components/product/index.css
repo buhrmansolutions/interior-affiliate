@@ -1,0 +1,38 @@
+.product {
+  max-width: 300px;
+  position: relative;
+}
+
+.product > img {
+  position: relative !important;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--border-radius-small);
+}
+
+.product > h4 {
+  margin-top: var(--margin-medium);
+}
+
+.product > p {
+  margin-top: var(--margin-medium-small);
+  color: var(--accent);
+  font-size: var(--body-medium-size);
+}
+
+.discount-badge {
+  position: absolute;
+  background-color: var(--accent-dark);
+  top: var(--margin-medium-small);
+  left: var(--margin-medium-small);
+  padding: var(--margin-extra-extra-small) var(--margin-extra-small);
+  border-radius: var(--border-radius-extra-small);
+  color: var(--white);
+  font-size: var(--body-small-size);
+}
+
+@media only screen and (max-width: 1080px) {
+  .product {
+    max-width: 100%;
+  }
+}

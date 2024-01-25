@@ -4,6 +4,7 @@
 
 :root {
   --accent: #b4a186;
+  --accent-dark: #a18a68;
   --white: #fbfbfb;
   --black: #0a0a0a;
   --light-gray: #d8d8d8;
@@ -12,7 +13,7 @@
   --error: #d82700;
   --heading-size: 33px;
   --heading2-size: 26px;
-  --heading3-size: 20px;
+  --heading3-size: 24px;
   --heading4-size: 20px;
   --heading5-size: 16px;
   --body-large-size: 16px;
@@ -21,18 +22,34 @@
   --regular-weight: 400;
   --medimum-weight: 500;
   --bold-weight: 700;
+  --margin-extra-large: 54px;
   --margin-large: 39px;
+  --margin-medium: 24px;
+  --margin-medium-small: 16px;
   --margin-small: 11px;
+  --margin-extra-small: 8px;
+  --margin-extra-extra-small: 4px;
+  --border-radius-small: 8px;
+  --border-radius-extra-small: 4px;
 }
 
 body {
   color: var(--black);
   background: var(--white);
   font-weight: var(--regular-weight);
-  padding: 0px 100px;
+  /* padding: 0px 100px; */
   font-size: var(--body-medium-size);
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
 svg {
   color: var(--black);
 }

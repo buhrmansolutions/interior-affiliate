@@ -6,12 +6,14 @@ import { Inter } from "next/font/google";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 // Prevent fontawesome from adding its CSS since we did it manually above:
 import { config } from "@fortawesome/fontawesome-svg-core";
+import { DM_Sans } from "next/font/google";
+
 config.autoAddCss = false; /* eslint-disable import/first */
 
 import "./globals.css";
 import Header from "./components/header";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = DM_Sans({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
   title: "Create Next App",

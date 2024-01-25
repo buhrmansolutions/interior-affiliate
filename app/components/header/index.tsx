@@ -38,43 +38,45 @@ export default function Layout() {
   const toggleHamburgerMenu = () => setShowHamburgerMenu(!showHamburgerMenu);
 
   return (
-    <div className="header">
-      <div className="header-top-container">
-        <Image src="/logo.png" alt="Sholf logo" width={100} height={23.83} />
-        <button
-          className={`hamburger-menu-container ${
-            showHamburgerMenu && "active"
-          }`}
-          onClick={toggleHamburgerMenu}
-        >
-          <FontAwesomeIcon icon={faBars} className="menu-icon-bars" />
-          <FontAwesomeIcon icon={faTimes} className="menu-icon-cross" />
-        </button>
-      </div>
-      <div className="desktop-headings-container">
-        {headings.map(({ heading, path }) => (
-          <Link href={path} key={heading}>
-            <h5>{heading}</h5>
-            {path === pathname && <div className="active-indicator" />}
-          </Link>
-        ))}
-      </div>
-      <div
-        className={`mobile-headings-container ${
-          showHamburgerMenu ? "active" : "inActive"
-        }`}
-      >
-        {headings.map(({ heading, path }) => (
-          <Link
-            href={path}
-            key={heading}
-            onClick={() => setShowHamburgerMenu(false)}
+    <div className="header-container">
+      <div className="header">
+        <div className="header-top-container">
+          <Image src="/logo.png" alt="Sholf logo" width={100} height={23.83} />
+          <button
+            className={`hamburger-menu-container ${
+              showHamburgerMenu && "active"
+            }`}
+            onClick={toggleHamburgerMenu}
           >
-            <h5>{path === pathname ? <b>{heading}</b> : heading}</h5>
-          </Link>
-        ))}
+            <FontAwesomeIcon icon={faBars} className="menu-icon-bars" />
+            <FontAwesomeIcon icon={faTimes} className="menu-icon-cross" />
+          </button>
+        </div>
+        <div className="desktop-headings-container">
+          {headings.map(({ heading, path }) => (
+            <Link href={path} key={heading}>
+              <h5>{heading}</h5>
+              {path === pathname && <div className="active-indicator" />}
+            </Link>
+          ))}
+        </div>
+        <div
+          className={`mobile-headings-container ${
+            showHamburgerMenu ? "active" : "inActive"
+          }`}
+        >
+          {headings.map(({ heading, path }) => (
+            <Link
+              href={path}
+              key={heading}
+              onClick={() => setShowHamburgerMenu(false)}
+            >
+              <h5>{path === pathname ? <b>{heading}</b> : heading}</h5>
+            </Link>
+          ))}
+        </div>
+        <div className="empty-element" />
       </div>
-      <div className="empty-element" />
     </div>
   );
 }

@@ -1,0 +1,31 @@
+.shop-container {
+  display: flex;
+  gap: var(--margin-large);
+}
+.shop-container > div:first-child {
+  padding-left: 100px;
+  margin-top: 96px;
+}
+.shop-container > div:last-child {
+  padding-right: 100px;
+}
+
+h1 {
+  margin-bottom: var(--margin-large);
+}
+
+@media only screen and (max-width: 1080px) {
+  h1 {
+    display: none;
+  }
+  .shop-container {
+    flex-direction: column;
+  }
+  .shop-container > div:first-child {
+    padding-left: 0px;
+    margin-top: 0px;
+  }
+  .shop-container > div:last-child {
+    padding-right: 0px;
+  }
+}

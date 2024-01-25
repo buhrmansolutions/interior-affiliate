@@ -12,7 +12,6 @@ export default () => {
     const newValue = e.target.value;
     const newFromValue = Math.min(newValue, to);
     const percentageValue = 100 * (newFromValue / (maxPrice - minPrice));
-    console.log((100 * (to - from)) / (maxPrice - minPrice) + "%");
     document.getElementById("from-handle")!.style.left = percentageValue + "%";
     document.getElementById("range")!.style.left = percentageValue + "%";
     document.getElementById("range")!.style.width =
@@ -31,7 +30,7 @@ export default () => {
     setTo(newToValue);
   };
   return (
-    <div>
+    <div className="slider-container">
       <div id="slider-distance">
         <div>
           <div id="background-range" />

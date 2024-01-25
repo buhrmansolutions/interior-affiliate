@@ -5,6 +5,7 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PriceRangeSlider from "./PriceRangeSlider";
 import Dropdown from "./Dropdown";
+import Switch from "./Switch";
 import enabledFilters, { sortByOptions, shopByOptions } from "./config";
 
 export default function Layout() {
@@ -23,6 +24,8 @@ export default function Layout() {
         <Dropdown options={sortByOptions} label="Sort by" />
       )}
       {enabledFilters.priceRange && <PriceRangeSlider />}
+      {enabledFilters.onSaleSwitch && <Switch label="On sale" />}
+      {enabledFilters.onSaleSwitch && <Switch label="In stock" />}
     </div>
   );
 }

@@ -31,6 +31,7 @@ const PageSelector = ({ numberOfPages, currentPage, setCurrentPage }) => {
     <div className="pageselector-container">
       {pages.map((page) => (
         <button
+          key={page}
           className={`page ${page === currentPage ? "active" : ""}`}
           onClick={() => setCurrentPage(page)}
         >

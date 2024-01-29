@@ -1,11 +1,8 @@
 "use client";
 import { useState } from "react";
 
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -41,7 +38,9 @@ export default function Layout() {
     <div className="header-container">
       <div className="header">
         <div className="header-top-container">
-          <Image src="/logo.png" alt="Sholf logo" width={100} height={23.83} />
+          <Link href="/">
+            <h1>allyourgolf</h1>
+          </Link>
           <button
             className={`hamburger-menu-container ${
               showHamburgerMenu && "active"

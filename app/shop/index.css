@@ -14,6 +14,14 @@ h1 {
   margin-bottom: var(--margin-large);
 }
 
+.filter-container {
+  position: fixed;
+}
+
+.filter-container + * {
+  margin-left: calc(400px + var(--margin-large));
+}
+
 @media only screen and (max-width: 1080px) {
   h1 {
     display: none;

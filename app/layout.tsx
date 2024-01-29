@@ -12,6 +12,7 @@ config.autoAddCss = false; /* eslint-disable import/first */
 
 import "./globals.css";
 import Header from "./components/header";
+import Footer from "./components/footer";
 
 const inter = DM_Sans({ subsets: ["latin"], weight: "400" });
 
@@ -30,6 +31,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

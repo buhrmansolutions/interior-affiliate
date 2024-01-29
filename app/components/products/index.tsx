@@ -21,8 +21,13 @@ const Products = () => {
 
   const numberOfPages = useMemo(
     () => Math.ceil(products.length / PRODUCTS_PER_PAGE),
-    []
+    [products]
   );
+
+  // const finalBatch =
+  //   batch.length < PRODUCTS_PER_PAGE
+  //     ? [...batch, ...new Array(PRODUCTS_PER_PAGE - batch.length).fill(null)]
+  //     : batch;
 
   return (
     <div className="product-container">

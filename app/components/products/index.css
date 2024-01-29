@@ -1,7 +1,7 @@
 .product-container {
   flex: 1;
-  height: calc(100vh - 99px);
-  overflow: scroll;
+  /* height: calc(100vh - 99px); */
+  /* overflow: scroll; */
 }
 .product-grid {
   flex: 1;
@@ -10,6 +10,7 @@
   gap: var(--margin-large);
   justify-content: center;
   padding-top: 96px;
+  /* height: 100%; */
 }
 
 @media only screen and (max-width: 1080px) {

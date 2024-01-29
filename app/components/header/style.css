@@ -1,5 +1,23 @@
 .header-container {
   padding: 0px 100px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+  background-color: var(--white);
+}
+
+.header-container + * {
+  margin-top: 100px;
+}
+
+.header-top-container > a > h1 {
+  margin-bottom: 0px;
+  font-weight: 900;
+  cursor: pointer;
+}
+.header-top-container > a > h1::first-letter {
+  color: var(--accent);
 }
 
 .header {

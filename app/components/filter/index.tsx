@@ -25,9 +25,12 @@ export default function Layout() {
   useEffect(() => {
     const filteredProducts = PRODUCTS.filter((product) => {
       if (!product.title.toLowerCase().includes(searchFilter.toLowerCase())) {
+        console.log("failing on search");
         return false;
       }
       if (shopByFilter !== "All" && !product.category.includes(shopByFilter)) {
+        console.log("failing on shop by");
+
         return false;
       }
       if (
@@ -36,6 +39,8 @@ export default function Layout() {
           product.price.amount <= priceRangeFilter.maxPrice
         )
       ) {
+        console.log("failing on price");
+
         return false;
       }
       return true;

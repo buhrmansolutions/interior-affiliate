@@ -1,6 +1,7 @@
 "use client";
 import { createContext, useState } from "react";
 import Filter from "../components/filter";
+import Footer from "../components/footer";
 import Products from "../components/products";
 import { PRODUCTS } from "../components/products/products";
 import "./index.css";
@@ -11,7 +12,7 @@ export default function Home() {
   return (
     <ShopContext.Provider value={{ products, setProducts }}>
       <div className="shop-container">
-        <div>
+        <div className="filter-container">
           <h1>Shop the latest</h1>
           <Filter />
         </div>

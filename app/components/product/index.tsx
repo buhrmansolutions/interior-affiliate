@@ -6,16 +6,21 @@ const DiscountBadge = ({ discount }) => {
   return <div className="discount-badge">- {discount}</div>;
 };
 
-const Product = (product) => {
+const Product = (product, index) => {
+  if (!product)
+    return <div className="empty-product" key={`empty-product-${index}`} />;
   return (
-    <div className="product">
-      <Image
-        src={product.img}
-        width={0}
-        height={0}
-        sizes="100vw"
-        style={{ width: "100%", height: "auto" }}
-      />
+    <div className="product" key={product.title}>
+      <div className="image-container">
+        <Image
+          alt={product.title}
+          src={product.img}
+          width={0}
+          height={0}
+          sizes="100vw"
+          style={{ width: "auto", height: "80%" }}
+        />
+      </div>
       <h4>{product.title}</h4>
       <p>
         {new Intl.NumberFormat("sv-SE", {

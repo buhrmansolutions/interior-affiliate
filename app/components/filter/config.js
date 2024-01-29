@@ -14,4 +14,4 @@ export const sortByOptions = [
   "Date added (Oldest first)",
 ];
 export const shopByOptions = ["Drivers", "Irons"];
-export const priceRange = { minPrice: 2000, maxPrice: 199999 };
+export const priceRange = { minPrice: 7.95, maxPrice: 999.99 };

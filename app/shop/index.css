@@ -3,11 +3,11 @@
   gap: var(--margin-large);
 }
 .shop-container > div:first-child {
-  padding-left: 100px;
+  padding-left: var(--margin-huge);
   margin-top: 96px;
 }
 .shop-container > div:last-child {
-  padding-right: 100px;
+  padding-right: var(--margin-huge);
 }
 
 h1 {
@@ -19,7 +19,7 @@ h1 {
 }
 
 .filter-container + * {
-  margin-left: calc(400px + var(--margin-large));
+  margin-left: calc(400px + var(--margin-huge));
 }
 
 @media only screen and (max-width: 1080px) {

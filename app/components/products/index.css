@@ -8,7 +8,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, 300px);
   gap: var(--margin-large);
-  justify-content: center;
   padding-top: 96px;
   /* height: 100%; */
 }

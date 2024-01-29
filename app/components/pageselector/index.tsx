@@ -7,7 +7,7 @@ const PageSelector = ({ numberOfPages, currentPage, setCurrentPage }) => {
   const lastCenterPage = numberOfPages - 2;
   const getPages = () => {
     if (numberOfPages < VISIBLE_PAGES)
-      return new Array(numberOfPages).map((_n, i) => i);
+      return new Array(numberOfPages).fill("").map((_n, i) => i);
     if (currentPage < DEFAULT_CENTER_PAGE) return [0, 1, 2, 3, 4];
     if (currentPage > lastCenterPage)
       return [
@@ -26,6 +26,7 @@ const PageSelector = ({ numberOfPages, currentPage, setCurrentPage }) => {
     ];
   };
   const pages = getPages();
+
   return (
     <div className="pageselector-container">
       {pages.map((page) => (

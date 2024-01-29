@@ -1,9 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export default () => {
-  const minPrice = 0;
-  const maxPrice = 1000;
-  const currency = "kr";
+export default ({ minPrice, maxPrice, onChange }) => {
+  const currency = "USD";
   const steps = (maxPrice - minPrice) / 100;
   const [from, setFrom] = useState(minPrice);
   const [to, setTo] = useState(maxPrice);
@@ -29,6 +27,10 @@ export default () => {
       (100 * (newToValue - from)) / (maxPrice - minPrice) + "%";
     setTo(newToValue);
   };
+
+  useEffect(() => {
+    onChange({ minPrice: from, maxPrice: to });
+  }, [from, to]);
   return (
     <div className="slider-container">
       <div id="slider-distance">
@@ -67,9 +69,16 @@ export default () => {
         />
       </div>
       <div className="label">
-        Price: {from}
-        {currency} - {to}
-        {currency}
+        Price:{" "}
+        {new Intl.NumberFormat("sv-SE", {
+          style: "currency",
+          currency: currency,
+        }).format(from)}{" "}
+        -{" "}
+        {new Intl.NumberFormat("sv-SE", {
+          style: "currency",
+          currency: currency,
+        }).format(to)}
       </div>
     </div>
   );

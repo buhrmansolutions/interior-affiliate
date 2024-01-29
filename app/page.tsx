@@ -1,5 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { Metadata } from "next";
+import { PRODUCTS } from "./products";
 
 export const metadata: Metadata = {
   title: "All golf you need",

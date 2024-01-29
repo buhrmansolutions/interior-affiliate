@@ -1,118 +1,34 @@
 "use client";
-
-import { useState } from "react";
+import { useState, useMemo, useContext } from "react";
 import Product from "../product";
 import PageSelector from "../pageselector";
 import "./index.css";
+import { ShopContext } from "@/app/shop/ShopContext";
 
-const PRODUCTS = [
-  {
-    href: "",
-    img: "https://images.unsplash.com/photo-1697448524500-717d056bc8ad?q=80&w=3300&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    title: "Driver Taylormade",
-    price: { amount: 2000, currency: "USD" },
-    discount: "",
-  },
-  {
-    href: "",
-    img: "https://images.unsplash.com/photo-1697448524524-99416ed5dbba?q=80&w=3726&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    title: "Irons Taylormade",
-    price: { amount: 199999, currency: "SEK" },
-    discount: "20%",
-  },
-  {
-    href: "",
-    img: "https://images.unsplash.com/photo-1697448524500-717d056bc8ad?q=80&w=3300&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    title: "Driver Taylormade",
-    price: { amount: 2000, currency: "USD" },
-    discount: "",
-  },
-  {
-    href: "",
-    img: "https://images.unsplash.com/photo-1697448524524-99416ed5dbba?q=80&w=3726&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    title: "Irons Taylormade",
-    price: { amount: 199999, currency: "SEK" },
-    discount: "20%",
-  },
-  {
-    href: "",
-    img: "https://images.unsplash.com/photo-1697448524500-717d056bc8ad?q=80&w=3300&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    title: "Driver Taylormade",
-    price: { amount: 2000, currency: "USD" },
-    discount: "",
-  },
-  {
-    href: "",
-    img: "https://images.unsplash.com/photo-1697448524524-99416ed5dbba?q=80&w=3726&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    title: "Irons Taylormade",
-    price: { amount: 199999, currency: "SEK" },
-    discount: "20%",
-  },
-  {
-    href: "",
-    img: "https://images.unsplash.com/photo-1697448524500-717d056bc8ad?q=80&w=3300&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    title: "Driver Taylormade",
-    price: { amount: 2000, currency: "USD" },
-    discount: "",
-  },
-  {
-    href: "",
-    img: "https://images.unsplash.com/photo-1697448524524-99416ed5dbba?q=80&w=3726&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    title: "Irons Taylormade",
-    price: { amount: 199999, currency: "SEK" },
-    discount: "20%",
-  },
-  {
-    href: "",
-    img: "https://images.unsplash.com/photo-1697448524500-717d056bc8ad?q=80&w=3300&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    title: "Driver Taylormade",
-    price: { amount: 2000, currency: "USD" },
-    discount: "",
-  },
-  {
-    href: "",
-    img: "https://images.unsplash.com/photo-1697448524524-99416ed5dbba?q=80&w=3726&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    title: "Irons Taylormade",
-    price: { amount: 199999, currency: "SEK" },
-    discount: "20%",
-  },
-  {
-    href: "",
-    img: "https://images.unsplash.com/photo-1697448524500-717d056bc8ad?q=80&w=3300&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    title: "Driver Taylormade",
-    price: { amount: 2000, currency: "USD" },
-    discount: "",
-  },
-  {
-    href: "",
-    img: "https://images.unsplash.com/photo-1697448524524-99416ed5dbba?q=80&w=3726&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    title: "Irons Taylormade",
-    price: { amount: 199999, currency: "SEK" },
-    discount: "20%",
-  },
-  {
-    href: "",
-    img: "https://images.unsplash.com/photo-1697448524500-717d056bc8ad?q=80&w=3300&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    title: "Driver Taylormade",
-    price: { amount: 2000, currency: "USD" },
-    discount: "",
-  },
-  {
-    href: "",
-    img: "https://images.unsplash.com/photo-1697448524524-99416ed5dbba?q=80&w=3726&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    title: "Irons Taylormade",
-    price: { amount: 199999, currency: "SEK" },
-    discount: "20%",
-  },
-];
-const mockNumberOfPages = 14;
+const PRODUCTS_PER_PAGE = 16;
 const Products = () => {
+  const { products } = useContext(ShopContext);
+
   const [currentPage, setCurrentPage] = useState(0);
+  const batch = useMemo(
+    () =>
+      products.slice(
+        currentPage * PRODUCTS_PER_PAGE,
+        (currentPage + 1) * PRODUCTS_PER_PAGE
+      ),
+    [currentPage, products]
+  );
+
+  const numberOfPages = useMemo(
+    () => Math.ceil(products.length / PRODUCTS_PER_PAGE),
+    []
+  );
+
   return (
     <div className="product-container">
-      <div className="product-grid">{PRODUCTS.map(Product)}</div>
+      <div className="product-grid">{batch.map(Product)}</div>
       <PageSelector
-        numberOfPages={mockNumberOfPages}
+        numberOfPages={numberOfPages}
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
       />

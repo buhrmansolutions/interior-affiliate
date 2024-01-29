@@ -5,27 +5,27 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default ({
   options: optionsProps,
   label,
+  onChange,
 }: {
   options: Array<string>;
   label: string;
+  onChange: (value: string) => void;
 }) => {
-  const options = ["all", ...optionsProps];
+  const options = ["All", ...optionsProps];
   const [selectedValue, setSelectedValue] = useState(null);
   const [showOptions, setShowOptions] = useState(false);
 
   const toggleShowOptions = () => setShowOptions(!showOptions);
 
   const setValue = (e) => {
+    e.stopPropagation();
     setSelectedValue(e.target.value);
+    onChange(e.target.value);
     toggleShowOptions();
   };
 
   const onBlur = (e) => {
-    if (e.relatedTarget && options.includes(e.relatedTarget.value)) {
-      const value = e.relatedTarget.value;
-      setSelectedValue(value === "all" ? undefined : value);
-    }
-    setShowOptions(false);
+    if (!(e.target.nodeName === "BUTTON")) setShowOptions(false);
   };
 
   return (

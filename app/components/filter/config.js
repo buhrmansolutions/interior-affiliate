@@ -3,8 +3,15 @@ export default {
   priceRange: true,
   sortBy: true,
   shopBy: true,
-  onSaleSwitch: true,
+  onSaleSwitch: false,
+  inStockSwitch: false,
 };
 
-export const sortByOptions = ["price", "date added"];
-export const shopByOptions = ["clubs", "gloves", "balls"];
+export const sortByOptions = [
+  "Price (Descending)",
+  "Price (Ascending)",
+  "Date added (Newest first)",
+  "Date added (Oldest first)",
+];
+export const shopByOptions = ["Drivers", "Irons"];
+export const priceRange = { minPrice: 2000, maxPrice: 199999 };

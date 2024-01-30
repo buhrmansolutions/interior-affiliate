@@ -13,3 +13,11 @@ body {
   background: var(--background);
   padding: 0px 100px;
 }
+
+
+
+@media only screen and (max-width: 600px) {
+  body {
+    padding: 0px 20px;
+  }
+}

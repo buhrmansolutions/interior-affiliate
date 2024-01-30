@@ -8,7 +8,7 @@ export default function Layout({
   children: React.ReactNode
 }) {
   return (
-    <div style={{backgroundColor:"blue"}}>
+    <div>
       {children}
     </div>
   )

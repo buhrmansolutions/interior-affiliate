@@ -1,6 +1,5 @@
-import Document, { Html, Head, Main, NextScript } from "next/document";
+import { Head } from "next/document";
 import { Metadata } from "next";
-import { PRODUCTS } from "./products";
 
 export const metadata: Metadata = {
   title: "All golf you need",
@@ -8,8 +7,11 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className={inter.className}>
+    <main>
       <Head>
+        {/**
+         * Kommentera ut dessa scripten om det dyker upp problem med TypeError: Class extends value undefined is not a constructor or null
+         */}
         <link
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
           rel="stylesheet"

@@ -25,12 +25,12 @@ export default function Layout() {
   useEffect(() => {
     const filteredProducts = PRODUCTS.filter((product) => {
       if (!product.title.toLowerCase().includes(searchFilter.toLowerCase())) {
-        console.log("failing on search");
         return false;
       }
-      if (shopByFilter !== "All" && !product.category.includes(shopByFilter)) {
-        console.log("failing on shop by");
-
+      if (
+        shopByFilter !== "All categories" &&
+        !product.category.includes(shopByFilter)
+      ) {
         return false;
       }
       if (
@@ -39,8 +39,6 @@ export default function Layout() {
           product.price.amount <= priceRangeFilter.maxPrice
         )
       ) {
-        console.log("failing on price");
-
         return false;
       }
       return true;
@@ -75,6 +73,7 @@ export default function Layout() {
           options={shopByOptions}
           label="Shop by"
           onChange={setShopByFilter}
+          defaultOption="All categories"
         />
       )}
       {enabledFilters.sortBy && (

@@ -328,6 +328,7 @@ export const PRODUCTS = [
     category: "jewelery",
     img: "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
     rating: { rate: 3.9, count: 70 },
+    wide: true,
   },
   {
     id: 7,
@@ -348,6 +349,7 @@ export const PRODUCTS = [
     category: "jewelery",
     img: "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg",
     rating: { rate: 1.9, count: 100 },
+    wide: true,
   },
   {
     id: 9,
@@ -368,6 +370,7 @@ export const PRODUCTS = [
     category: "electronics",
     img: "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg",
     rating: { rate: 2.9, count: 470 },
+    wide: true,
   },
   {
     id: 11,
@@ -379,6 +382,7 @@ export const PRODUCTS = [
     category: "electronics",
     img: "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg",
     rating: { rate: 4.8, count: 319 },
+    wide: true,
   },
   {
     id: 12,
@@ -400,6 +404,7 @@ export const PRODUCTS = [
     category: "electronics",
     img: "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg",
     rating: { rate: 2.9, count: 250 },
+    wide: true,
   },
   {
     id: 14,
@@ -411,6 +416,7 @@ export const PRODUCTS = [
     category: "electronics",
     img: "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg",
     rating: { rate: 2.2, count: 140 },
+    wide: true,
   },
   {
     id: 15,

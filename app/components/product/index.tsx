@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import "./index.css";
 
 const DiscountBadge = ({ discount }) => {
@@ -18,7 +19,11 @@ const Product = (product, index) => {
           width={0}
           height={0}
           sizes="100vw"
-          style={{ width: "auto", height: "80%" }}
+          style={
+            product.wide
+              ? { width: "80%", height: "auto" }
+              : { width: "auto", height: "80%" }
+          }
         />
       </div>
       <h4>{product.title}</h4>

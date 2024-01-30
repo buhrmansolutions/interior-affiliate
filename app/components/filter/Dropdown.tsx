@@ -6,12 +6,14 @@ export default ({
   options: optionsProps,
   label,
   onChange,
+  defaultOption,
 }: {
   options: Array<string>;
   label: string;
   onChange: (value: string) => void;
+  defaultOption: string;
 }) => {
-  const options = ["All", ...optionsProps];
+  const options = [defaultOption, ...optionsProps].filter(Boolean);
   const [selectedValue, setSelectedValue] = useState(null);
   const [showOptions, setShowOptions] = useState(false);
 

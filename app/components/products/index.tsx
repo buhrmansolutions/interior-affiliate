@@ -1,11 +1,11 @@
 "use client";
-import { useState, useMemo, useContext } from "react";
+import { useState, useMemo, useContext, useEffect } from "react";
 import Product from "../product";
 import PageSelector from "../pageselector";
 import "./index.css";
 import { ShopContext } from "@/app/shop/ShopContext";
 
-const NUMBER_OF_ROWS = 2;
+const NUMBER_OF_ROWS = 4;
 const ITEM_WIDTH = 300;
 const GAP_WIDTH = 39;
 const GRID_WIDTH = window.innerWidth - 400 - 100 * 2;
@@ -28,19 +28,22 @@ const Products = () => {
     [currentPage, products]
   );
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [currentPage]);
   const numberOfPages = useMemo(
     () => Math.ceil(products.length / PRODUCTS_PER_PAGE),
     [products]
   );
 
-  // const finalBatch =
-  //   batch.length < PRODUCTS_PER_PAGE
-  //     ? [...batch, ...new Array(PRODUCTS_PER_PAGE - batch.length).fill(null)]
-  //     : batch;
+  const finalBatch =
+    batch.length < PRODUCTS_PER_PAGE
+      ? [...batch, ...new Array(PRODUCTS_PER_PAGE - batch.length).fill(null)]
+      : batch;
 
   return (
     <div className="product-container">
-      <div className="product-grid">{batch.map(Product)}</div>
+      <div className="product-grid">{finalBatch.map(Product)}</div>
       <PageSelector
         numberOfPages={numberOfPages}
         currentPage={currentPage}

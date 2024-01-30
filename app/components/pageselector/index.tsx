@@ -26,18 +26,18 @@ const PageSelector = ({ numberOfPages, currentPage, setCurrentPage }) => {
     ];
   };
   const pages = getPages();
-
   return (
     <div className="pageselector-container">
-      {pages.map((page) => (
-        <button
-          key={page}
-          className={`page ${page === currentPage ? "active" : ""}`}
-          onClick={() => setCurrentPage(page)}
-        >
-          {page + 1}
-        </button>
-      ))}
+      {pages.length > 1 &&
+        pages.map((page) => (
+          <button
+            key={page}
+            className={`page ${page === currentPage ? "active" : ""}`}
+            onClick={() => setCurrentPage(page)}
+          >
+            {page + 1}
+          </button>
+        ))}
     </div>
   );
 };

@@ -22,6 +22,8 @@
   height: 14px;
   display: flex;
   align-items: center;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 #range {
@@ -29,6 +31,7 @@
   left: 0;
   height: 2px;
   background-color: var(--black);
+  z-index: -1;
 }
 
 .thumb {
@@ -46,7 +49,6 @@ input[type="range"] {
   -webkit-appearance: none;
   z-index: 3;
   height: 14px;
-  top: -6px;
   width: 100%;
   opacity: 0;
   border: none;
@@ -91,6 +93,7 @@ input[type="range"]::-ms-tooltip {
   height: 2px;
   position: absolute;
   width: 100%;
+  z-index: -1;
 }
 #to-handle {
   margin-left: -2px;

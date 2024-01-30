@@ -6,10 +6,46 @@ export default ({ minPrice, maxPrice, onChange }) => {
   const [from, setFrom] = useState(minPrice);
   const [to, setTo] = useState(maxPrice);
 
+  const onSliderClick = (e) => {
+    if (e.target.id === "slider-distance") {
+      const position = e.clientX - e.target.offsetLeft;
+      const width = e.target.offsetWidth;
+      const value = minPrice + (position / width) * (maxPrice - minPrice);
+
+      if (Math.abs(from - value) < Math.abs(to - value)) {
+        setFrom(value);
+        const percentageValue = Math.max(
+          0,
+          100 * (value / (maxPrice - minPrice))
+        );
+
+        document.getElementById("from-handle")!.style.left =
+          percentageValue + "%";
+        document.getElementById("range")!.style.left = percentageValue + "%";
+        document.getElementById("range")!.style.width =
+          (100 * (to - value)) / (maxPrice - minPrice) + "%";
+      } else {
+        setTo(value);
+        const percentageValue = Math.min(
+          100,
+          100 * (value / (maxPrice - minPrice))
+        );
+
+        document.getElementById("to-handle")!.style.left =
+          percentageValue + "%";
+        document.getElementById("range")!.style.right = percentageValue + "%";
+        document.getElementById("range")!.style.width =
+          (100 * (value - from)) / (maxPrice - minPrice) + "%";
+      }
+    }
+  };
+
   const onFromInput = (e: any) => {
     const newValue = e.target.value;
     const newFromValue = Math.min(newValue, to);
-    const percentageValue = 100 * (newFromValue / (maxPrice - minPrice));
+    const percentageValue =
+      100 * ((newFromValue - minPrice) / (maxPrice - minPrice));
+
     document.getElementById("from-handle")!.style.left = percentageValue + "%";
     document.getElementById("range")!.style.left = percentageValue + "%";
     document.getElementById("range")!.style.width =
@@ -19,7 +55,8 @@ export default ({ minPrice, maxPrice, onChange }) => {
   const onToInput = (e: any) => {
     const newValue = e.target.value;
     const newToValue = Math.max(newValue, from);
-    const percentageValue = 100 * (newToValue / (maxPrice - minPrice));
+    const percentageValue =
+      100 * ((newToValue - minPrice) / (maxPrice - minPrice));
 
     document.getElementById("to-handle")!.style.left = percentageValue + "%";
     document.getElementById("range")!.style.right = percentageValue + "%";
@@ -33,7 +70,7 @@ export default ({ minPrice, maxPrice, onChange }) => {
   }, [from, to]);
   return (
     <div className="slider-container">
-      <div id="slider-distance">
+      <div id="slider-distance" onClick={onSliderClick}>
         <div>
           <div id="background-range" />
           <div id="range" style={{ left: "0%", right: "0%" }}></div>

@@ -18,8 +18,8 @@ const headings = [
     path: "/about",
   },
   {
-    heading: "News",
-    path: "/news",
+    heading: "Blog",
+    path: "/blog",
   },
 ];
 

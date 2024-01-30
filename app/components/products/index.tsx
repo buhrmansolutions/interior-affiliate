@@ -36,14 +36,14 @@ const Products = () => {
     [products]
   );
 
-  const finalBatch =
-    batch.length < PRODUCTS_PER_PAGE
-      ? [...batch, ...new Array(PRODUCTS_PER_PAGE - batch.length).fill(null)]
-      : batch;
+  // const finalBatch =
+  //   batch.length < PRODUCTS_PER_PAGE
+  //     ? [...batch, ...new Array(PRODUCTS_PER_PAGE - batch.length).fill(null)]
+  //     : batch;
 
   return (
     <div className="product-container">
-      <div className="product-grid">{finalBatch.map(Product)}</div>
+      <div className="product-grid">{batch.map(Product)}</div>
       <PageSelector
         numberOfPages={numberOfPages}
         currentPage={currentPage}

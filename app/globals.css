@@ -24,7 +24,9 @@
   --medimum-weight: 500;
   --bold-weight: 700;
   --margin-huge: 100px;
+  --margin-almost-huge: 96px;
   --margin-extra-large: 54px;
+  --margin-very-large: 46px;
   --margin-large: 39px;
   --margin-medium: 24px;
   --margin-medium-small: 16px;
@@ -70,12 +72,16 @@ h3 {
   font-weight: var(--regular-weight);
 }
 h4 {
-  font-size: var(--headin4-size);
+  font-size: var(--heading4-size);
   font-weight: var(--medium-weight);
 }
 h5 {
   font-size: var(--headin5-size);
   font-weight: var(--regular-weight);
+}
+
+p {
+  font-size: var(--body-large-size);
 }
 
 @media only screen and (max-width: 1080px) {

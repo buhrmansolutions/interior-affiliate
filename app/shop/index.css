@@ -4,7 +4,7 @@
 }
 .shop-container > div:first-child {
   padding-left: var(--margin-huge);
-  margin-top: 96px;
+  margin-top: var(--margin-almost-huge);
 }
 .shop-container > div:last-child {
   padding-right: var(--margin-huge);

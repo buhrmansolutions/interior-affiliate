@@ -1,0 +1,33 @@
+.about-page {
+  padding: var(--margin-almost-huge) var(--margin-huge);
+  margin-top: var(--margin-huge);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.about-content {
+  max-width: 670px;
+}
+
+.about-content > h1,
+.about-content > h4 {
+  text-align: center;
+}
+
+.about-content > h4 {
+  margin-top: var(--margin-medium);
+}
+
+.about-content > h2 {
+  margin-top: var(--margin-large);
+}
+
+.about-content > p {
+  margin-top: var(--margin-very-large);
+}
+
+.about-content > img {
+  margin-top: var(--margin-medium);
+  position: relative !important;
+  border-radius: var(--border-radius-small);
+}

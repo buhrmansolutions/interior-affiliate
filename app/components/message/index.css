@@ -1,0 +1,9 @@
+.message {
+  position: fixed;
+  padding: var(--margin-extra-small);
+  background-color: var(--pure-white);
+  border-radius: var(--border-radius-small);
+  border: 2px solid var(--black);
+  bottom: var(--margin-extra-large);
+  right: var(--margin-huge);
+}

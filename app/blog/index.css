@@ -54,3 +54,10 @@
   margin-top: var(--margin-extra-large);
   margin-bottom: var(--margin-extra-large);
 }
+
+@media only screen and (max-width: 1080px) {
+  .blog-page {
+    margin-top: var(--margin-medium);
+    padding: 0px;
+  }
+}

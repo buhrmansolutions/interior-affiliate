@@ -1,12 +1,12 @@
-"use client";
-import { useState } from "react";
+"use client"
+import { useEffect, useState } from "react"
 
-import { usePathname, useRouter } from "next/navigation";
-import Link from "next/link";
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { usePathname, useRouter } from "next/navigation"
+import Link from "next/link"
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-import "./style.css";
+import "./style.css"
 
 const headings = [
   {
@@ -21,18 +21,20 @@ const headings = [
     heading: "Blog",
     path: "/blog",
   },
-];
+]
 
 export default function Layout() {
-  const pathname = usePathname();
-  const { push } = useRouter();
-  const [showHamburgerMenu, setShowHamburgerMenu] = useState(false);
+  const pathname = usePathname()
+  const { push } = useRouter()
+  const [showHamburgerMenu, setShowHamburgerMenu] = useState(false)
 
-  if (pathname === "/") {
-    push(headings[0].path);
-  }
+  useEffect(() => {
+    if (pathname === "/") {
+      push(headings[0].path)
+    }
+  }, [])
 
-  const toggleHamburgerMenu = () => setShowHamburgerMenu(!showHamburgerMenu);
+  const toggleHamburgerMenu = () => setShowHamburgerMenu(!showHamburgerMenu)
 
   return (
     <div className="header-container">
@@ -77,5 +79,5 @@ export default function Layout() {
         <div className="empty-element" />
       </div>
     </div>
-  );
+  )
 }

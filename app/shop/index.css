@@ -36,4 +36,10 @@ h1 {
   .shop-container > div:last-child {
     padding-right: 0px;
   }
+  .filter-container {
+    position: relative;
+  }
+  .filter-container + * {
+    margin-left: 0px;
+  }
 }

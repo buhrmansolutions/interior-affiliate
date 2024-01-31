@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 
 // The following import prevents a Font Awesome icon server-side rendering bug,
 // where the icons flash from a very large icon down to a properly sized one:
@@ -19,6 +18,12 @@ const inter = DM_Sans({ subsets: ["latin"], weight: "400" });
 export const metadata: Metadata = {
   title: "allyourgolf",
   description: "Where your passion for golf meets convenience",
+  keywords: "Golf, golf-shop, allyourgolf, golfer, golfing, golf gear",
+  openGraph: {
+    title: "allyourgolf",
+    description: "Where your passion for golf meets convenience",
+    siteName: "allyourgolf.com",
+  },
 };
 
 export default function RootLayout({

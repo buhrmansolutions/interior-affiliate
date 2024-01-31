@@ -11,8 +11,10 @@ export default ({ minPrice, maxPrice, onChange }) => {
       const position = e.clientX - e.target.offsetLeft;
       const width = e.target.offsetWidth;
       const value = minPrice + (position / width) * (maxPrice - minPrice);
-
-      if (Math.abs(from - value) < Math.abs(to - value)) {
+      const shouldChangeFrom =
+        Math.abs(from - value) < Math.abs(to - value) ||
+        (from === to && value < from);
+      if (shouldChangeFrom) {
         setFrom(value);
         const percentageValue = Math.max(
           0,

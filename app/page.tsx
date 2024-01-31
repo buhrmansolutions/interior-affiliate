@@ -1,14 +1,16 @@
 import { Metadata } from "next";
 import Head from "next/head";
-export const metadata: Metadata = {
-  title: "All golf you need",
-};
 
 export default function Home() {
   return (
     <main>
       <Head>
-        <link rel="shortcut icon" href="/icon.png" />
+        <link
+          rel="icon"
+          href="/icon?<generated>"
+          type="image/png"
+          sizes="32x32"
+        />
       </Head>
     </main>
   );

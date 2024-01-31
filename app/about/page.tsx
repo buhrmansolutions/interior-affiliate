@@ -21,7 +21,7 @@ const Page = () => {
         <Image
           alt="golf image"
           src="https://images.pexels.com/photos/5885314/pexels-photo-5885314.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-          layout="fill"
+          fill
         />
 
         <p>
@@ -35,7 +35,7 @@ const Page = () => {
         <Image
           alt="golf image"
           src="https://images.pexels.com/photos/1175015/pexels-photo-1175015.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-          layout="fill"
+          fill
         />
         <p>
           Our love for golf goes beyond the greens; it's about fostering a

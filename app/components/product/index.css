@@ -53,4 +53,10 @@
   .product {
     max-width: 100%;
   }
+
+  .image-container {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+  }
 }

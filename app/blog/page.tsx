@@ -35,17 +35,13 @@ const BlogPost = (
       <h5>
         by <span className="author">{author}</span> - {date}
       </h5>
-      <Image layout="fill" src={image} alt="Blog post image" />
+      <Image fill src={image} alt="Blog post image" />
       <p>{introText}</p>
       {sections.map(
         ({ image: sectionImage, title: sectionTitle, text: sectionText }) => (
           <div className="blog-post-section">
             {sectionImage && (
-              <Image
-                layout="fill"
-                src={sectionImage}
-                alt="Section post image"
-              />
+              <Image fill src={sectionImage} alt="Section post image" />
             )}
             <h2>{sectionTitle}</h2>
             <p>{sectionText}</p>

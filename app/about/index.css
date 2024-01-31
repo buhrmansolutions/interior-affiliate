@@ -31,3 +31,10 @@
   position: relative !important;
   border-radius: var(--border-radius-small);
 }
+
+@media only screen and (max-width: 1080px) {
+  .about-page {
+    margin-top: var(--margin-medium);
+    padding: 0px;
+  }
+}

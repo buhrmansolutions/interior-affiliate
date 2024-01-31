@@ -114,9 +114,11 @@ input[type="range"]::-ms-tooltip {
   justify-content: space-between;
   display: flex;
   cursor: pointer;
+  background-color: var(--pure-white);
 }
 
 .options {
+  background-color: var(--pure-white);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -216,6 +218,6 @@ input:checked + .slider:before {
 @media only screen and (max-width: 1080px) {
   .filter {
     width: 100%;
-    margin-top: var(--margin-large);
+    margin-top: var(--margin-medium);
   }
 }

@@ -5,34 +5,44 @@ import PageSelector from "../pageselector";
 import "./index.css";
 import { ShopContext } from "@/app/shop/ShopContext";
 
-const NUMBER_OF_ROWS = 4;
-const ITEM_WIDTH = 300;
-const GAP_WIDTH = 39;
-const GRID_WIDTH = window.innerWidth - 400 - 100 * 2;
-const SPACE_LEFT_FOR_ITEM = GRID_WIDTH % (ITEM_WIDTH + GAP_WIDTH) > ITEM_WIDTH;
-const ITEMS_PER_ROW =
-  Math.floor(GRID_WIDTH / (ITEM_WIDTH + GAP_WIDTH)) +
-  (SPACE_LEFT_FOR_ITEM ? 1 : 0);
-const PRODUCTS_PER_PAGE = ITEMS_PER_ROW * NUMBER_OF_ROWS;
-
 const Products = () => {
   const { products } = useContext(ShopContext);
-
+  const [productsPerPage, setProductsPerPage] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
   const batch = useMemo(
     () =>
       products.slice(
-        currentPage * PRODUCTS_PER_PAGE,
-        (currentPage + 1) * PRODUCTS_PER_PAGE
+        currentPage * productsPerPage,
+        (currentPage + 1) * productsPerPage
       ),
     [currentPage, products]
   );
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    const MOBILE_THRESHOLD_WIDTH = 1080;
+    const WINDOW_WIDTH = window.innerWidth;
+    const IS_MOBILE = WINDOW_WIDTH < MOBILE_THRESHOLD_WIDTH;
+    const NUMBER_OF_ROWS = IS_MOBILE ? 16 : 4;
+    const ITEM_WIDTH = 300;
+    const GAP_WIDTH = 39;
+    const GRID_WIDTH = WINDOW_WIDTH - (IS_MOBILE ? 40 : 400 - 100 * 2);
+    const SPACE_LEFT_FOR_ITEM =
+      GRID_WIDTH % (ITEM_WIDTH + GAP_WIDTH) > ITEM_WIDTH;
+    const ITEMS_PER_ROW = IS_MOBILE
+      ? 1
+      : Math.floor(GRID_WIDTH / (ITEM_WIDTH + GAP_WIDTH)) +
+        (SPACE_LEFT_FOR_ITEM ? 1 : 0);
+    const PRODUCTS_PER_PAGE = ITEMS_PER_ROW * NUMBER_OF_ROWS;
+    setProductsPerPage(PRODUCTS_PER_PAGE);
+  }, []);
+
+  useEffect(() => {
+    if (window) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   }, [currentPage]);
   const numberOfPages = useMemo(
-    () => Math.ceil(products.length / PRODUCTS_PER_PAGE),
+    () => Math.ceil(products.length / productsPerPage),
     [products]
   );
 

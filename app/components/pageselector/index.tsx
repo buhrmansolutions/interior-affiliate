@@ -5,6 +5,7 @@ const DEFAULT_CENTER_PAGE = 3;
 
 const PageSelector = ({ numberOfPages, currentPage, setCurrentPage }) => {
   const lastCenterPage = numberOfPages - 2;
+
   const getPages = () => {
     if (numberOfPages < VISIBLE_PAGES)
       return new Array(numberOfPages).fill("").map((_n, i) => i);

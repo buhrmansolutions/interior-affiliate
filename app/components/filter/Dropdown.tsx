@@ -39,7 +39,7 @@ export default ({
       {showOptions && (
         <div className="options">
           {options.map((option) => (
-            <button value={option} onClick={(e) => setValue(e)}>
+            <button value={option} onClick={(e) => setValue(e)} key={option}>
               {option}
             </button>
           ))}

@@ -1,6 +1,12 @@
-import { createContext } from "react";
+import { createContext } from "react"
+import { Product } from "../components/product"
 
-export const ShopContext = createContext({
+type ContextType = {
+  products: Array<Product>
+  setProducts: (a: Array<Product>) => void
+}
+
+export const ShopContext = createContext<ContextType>({
   setProducts: () => {},
-  products: [],
-});
+  products: [] as Array<Product>,
+})

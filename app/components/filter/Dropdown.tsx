@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, FocusEvent } from "react"
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
@@ -11,22 +11,22 @@ const Dropdown = ({
   options: Array<string>
   label: string
   onChange: (value: string) => void
-  defaultOption: string
+  defaultOption?: string
 }) => {
   const options = [defaultOption, ...optionsProps].filter(Boolean)
-  const [selectedValue, setSelectedValue] = useState(null)
+  const [selectedValue, setSelectedValue] = useState<string | null>(null)
   const [showOptions, setShowOptions] = useState(false)
 
   const toggleShowOptions = () => setShowOptions(!showOptions)
 
-  const setValue = (e) => {
+  const setValue = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.stopPropagation()
-    setSelectedValue(e.target.value)
-    onChange(e.target.value)
+    setSelectedValue((e.target as HTMLInputElement).value)
+    onChange((e.target as HTMLInputElement).value)
     toggleShowOptions()
   }
 
-  const onBlur = (e) => {
+  const onBlur = (e: FocusEvent<HTMLButtonElement>) => {
     if (!(e.target.nodeName === "BUTTON")) setShowOptions(false)
   }
 

@@ -1,15 +1,27 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, MouseEventHandler } from "react"
 
-const PriceRangeSlider = ({ minPrice, maxPrice, onChange }) => {
+type Props = {
+  minPrice: number
+  maxPrice: number
+  onChange: ({
+    minPrice,
+    maxPrice,
+  }: {
+    minPrice: number
+    maxPrice: number
+  }) => void
+}
+
+const PriceRangeSlider = ({ minPrice, maxPrice, onChange }: Props) => {
   const currency = "USD"
   const steps = (maxPrice - minPrice) / 100
   const [from, setFrom] = useState(minPrice)
   const [to, setTo] = useState(maxPrice)
 
-  const onSliderClick = (e) => {
-    if (e.target.id === "slider-distance") {
-      const position = e.clientX - e.target.offsetLeft
-      const width = e.target.offsetWidth
+  const onSliderClick: MouseEventHandler<HTMLDivElement> = (e) => {
+    if ((e.target as HTMLDivElement).id === "slider-distance") {
+      const position = e.clientX - (e.target as HTMLDivElement).offsetLeft
+      const width = (e.target as HTMLDivElement).offsetWidth
       const value = minPrice + (position / width) * (maxPrice - minPrice)
       const shouldChangeFrom =
         Math.abs(from - value) < Math.abs(to - value) ||

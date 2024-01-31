@@ -49,9 +49,10 @@ export default function Layout() {
       if (sortByFilter === "Price (Ascending)")
         return a.price.amount - b.price.amount
       if (sortByFilter === "Date added (Newest first)")
-        return new Date(b.dateAdded) - new Date(a.dateAdded)
+        return new Date(b.dateAdded).getTime() - new Date(a.dateAdded).getTime()
       if (sortByFilter === "Date added (Oldest first)")
-        return new Date(a.dateAdded) - new Date(b.dateAdded)
+        return new Date(a.dateAdded).getTime() - new Date(b.dateAdded).getTime()
+      return -1
     })
     setProducts(sortedProducts)
   }, [searchFilter, shopByFilter, sortByFilter, priceRangeFilter, setProducts])

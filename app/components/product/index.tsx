@@ -1,15 +1,26 @@
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import "./index.css";
+import Image from "next/image"
+import { useEffect, useState } from "react"
+import "./index.css"
 
-const DiscountBadge = ({ discount }) => {
-  if (!discount) return null;
-  return <div className="discount-badge">- {discount}</div>;
-};
+const DiscountBadge = ({ discount }: { discount: string }) => {
+  if (!discount) return null
+  return <div className="discount-badge">- {discount}</div>
+}
 
-const Product = (product, index) => {
+export type Product = {
+  id: number
+  title: string
+  price: { amount: number; currency: string }
+  description: string
+  category: string
+  img: string
+  dateAdded: string
+  wide?: boolean
+}
+
+const Product = (product: Product, index: number) => {
   if (!product)
-    return <div className="empty-product" key={`empty-product-${index}`} />;
+    return <div className="empty-product" key={`empty-product-${index}`} />
   return (
     <div className="product" key={product.title}>
       <div className="image-container">
@@ -33,9 +44,9 @@ const Product = (product, index) => {
           currency: product.price.currency,
         }).format(product.price.amount)}
       </p>
-      <DiscountBadge discount={product.discount} />
+      {/* <DiscountBadge discount={product.discount} /> */}
     </div>
-  );
-};
+  )
+}
 
-export default Product;
+export default Product

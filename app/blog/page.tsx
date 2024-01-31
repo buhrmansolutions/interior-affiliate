@@ -24,10 +24,17 @@ const blogPosts = [
     ],
   },
 ]
-
+type Props = {
+  title: string
+  date: string
+  author: string
+  image: string
+  introText: string
+  sections: Array<{ title: string; text: string; image?: string }>
+}
 const BlogPost = (
-  { title, date, author, image, introText, sections },
-  index
+  { title, date, author, image, introText, sections }: Props,
+  index: number
 ) => {
   return (
     <div className="blog-post">

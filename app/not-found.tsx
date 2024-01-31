@@ -1,5 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from "next/image"
+import Link from "next/link"
 
 export default function Home() {
   return (
@@ -14,13 +14,13 @@ export default function Home() {
         </div>
         <h1>Oops!</h1>
         <p>
-          It seems like you've landed in the bunker of the internet. Don't
-          worry; even the best golfers hit a few unexpected hazards. Swing back
-          to our
-          <Link href="/shop"> homepage </Link>and let's get you back on the
+          It seems like you&apos;ve landed in the bunker of the internet.
+          Don&apos;t worry; even the best golfers hit a few unexpected hazards.
+          Swing back to our
+          <Link href="/shop"> homepage </Link>and let&apos;s get you back on the
           fairway!
         </p>
       </div>
     </main>
-  );
+  )
 }

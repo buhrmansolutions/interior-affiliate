@@ -1,5 +1,5 @@
-import Image from "next/image";
-import "./index.css";
+import Image from "next/image"
+import "./index.css"
 
 const Page = () => {
   return (
@@ -27,7 +27,7 @@ const Page = () => {
         <p>
           In the vast landscape of golf gear, finding the right equipment and
           accessories can sometimes feel like searching for a needle in a
-          haystack. That's where we come in. allyourgolf is your go-to
+          haystack. That&apos;s where we come in. allyourgolf is your go-to
           destination for everything golf, carefully bringing together a diverse
           array of products to cater to the needs of every hobby golfer.
         </p>
@@ -38,16 +38,16 @@ const Page = () => {
           fill
         />
         <p>
-          Our love for golf goes beyond the greens; it's about fostering a
+          Our love for golf goes beyond the greens; it&apos;s about fostering a
           community of golf enthusiasts who share the same excitement and
           dedication. We believe that every swing should be backed by quality
           gear that enhances your performance and enjoyment on the course.
           <br />
           <br />
-          At allyourgolf, we're not just a marketplace; we're your golfing
-          companion, simplifying your shopping journey so you can focus on what
-          you love most – playing golf. Join us in creating unforgettable
-          moments on the course, one swing at a time.
+          At allyourgolf, we&apos;re not just a marketplace; we&apos;re your
+          golfing companion, simplifying your shopping journey so you can focus
+          on what you love most – playing golf. Join us in creating
+          unforgettable moments on the course, one swing at a time.
           <br />
           <br />
           Happy shopping, and may your drives be straight and your putts be
@@ -55,7 +55,7 @@ const Page = () => {
         </p>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Page;
+export default Page

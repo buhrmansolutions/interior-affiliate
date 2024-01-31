@@ -1,5 +1,5 @@
-import Image from "next/image";
-import "./index.css";
+import Image from "next/image"
+import "./index.css"
 
 const blogPosts = [
   {
@@ -23,7 +23,7 @@ const blogPosts = [
       },
     ],
   },
-];
+]
 
 const BlogPost = (
   { title, date, author, image, introText, sections },
@@ -39,7 +39,7 @@ const BlogPost = (
       <p>{introText}</p>
       {sections.map(
         ({ image: sectionImage, title: sectionTitle, text: sectionText }) => (
-          <div className="blog-post-section">
+          <div className="blog-post-section" key={sectionTitle}>
             {sectionImage && (
               <Image fill src={sectionImage} alt="Section post image" />
             )}
@@ -50,11 +50,11 @@ const BlogPost = (
       )}
       {index < blogPosts.length - 1 && <div className="divider" />}
     </div>
-  );
-};
+  )
+}
 
 const Page = () => {
-  return <div className="blog-page">{blogPosts.map(BlogPost)}</div>;
-};
+  return <div className="blog-page">{blogPosts.map(BlogPost)}</div>
+}
 
-export default Page;
+export default Page

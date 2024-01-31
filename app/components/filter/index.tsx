@@ -1,37 +1,37 @@
-"use client";
+"use client"
 
-import "./style.css";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import PriceRangeSlider from "./PriceRangeSlider";
-import Dropdown from "./Dropdown";
-import Switch from "./Switch";
+import "./style.css"
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import PriceRangeSlider from "./PriceRangeSlider"
+import Dropdown from "./Dropdown"
+import Switch from "./Switch"
 import enabledFilters, {
   sortByOptions,
   shopByOptions,
   priceRange,
-} from "./config";
-import { useContext, useEffect, useState } from "react";
-import { ShopContext } from "@/app/shop/ShopContext";
-import { PRODUCTS } from "../products/products";
+} from "./config"
+import { useContext, useEffect, useState } from "react"
+import { ShopContext } from "@/app/shop/ShopContext"
+import { PRODUCTS } from "../products/products"
 
 export default function Layout() {
-  const { setProducts } = useContext(ShopContext);
-  const [searchFilter, setSearchFilter] = useState("");
-  const [shopByFilter, setShopByFilter] = useState("");
-  const [sortByFilter, setSortByFilter] = useState("");
-  const [priceRangeFilter, setPriceRangeFilter] = useState(priceRange);
+  const { setProducts } = useContext(ShopContext)
+  const [searchFilter, setSearchFilter] = useState("")
+  const [shopByFilter, setShopByFilter] = useState("")
+  const [sortByFilter, setSortByFilter] = useState("")
+  const [priceRangeFilter, setPriceRangeFilter] = useState(priceRange)
 
   useEffect(() => {
     const filteredProducts = PRODUCTS.filter((product) => {
       if (!product.title.toLowerCase().includes(searchFilter.toLowerCase())) {
-        return false;
+        return false
       }
       if (
         shopByFilter !== "All categories" &&
         !product.category.includes(shopByFilter)
       ) {
-        return false;
+        return false
       }
       if (
         !(
@@ -39,22 +39,22 @@ export default function Layout() {
           product.price.amount <= priceRangeFilter.maxPrice
         )
       ) {
-        return false;
+        return false
       }
-      return true;
-    });
+      return true
+    })
     const sortedProducts = filteredProducts.sort((a, b) => {
       if (sortByFilter === "Price (Descending)")
-        return b.price.amount - a.price.amount;
+        return b.price.amount - a.price.amount
       if (sortByFilter === "Price (Ascending)")
-        return a.price.amount - b.price.amount;
+        return a.price.amount - b.price.amount
       if (sortByFilter === "Date added (Newest first)")
-        return new Date(b.dateAdded) - new Date(a.dateAdded);
+        return new Date(b.dateAdded) - new Date(a.dateAdded)
       if (sortByFilter === "Date added (Oldest first)")
-        return new Date(a.dateAdded) - new Date(b.dateAdded);
-    });
-    setProducts(sortedProducts);
-  }, [searchFilter, shopByFilter, sortByFilter, priceRangeFilter]);
+        return new Date(a.dateAdded) - new Date(b.dateAdded)
+    })
+    setProducts(sortedProducts)
+  }, [searchFilter, shopByFilter, sortByFilter, priceRangeFilter, setProducts])
 
   return (
     <div className="filter">
@@ -87,5 +87,5 @@ export default function Layout() {
         <PriceRangeSlider {...priceRange} onChange={setPriceRangeFilter} />
       )}
     </div>
-  );
+  )
 }

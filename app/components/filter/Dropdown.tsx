@@ -1,34 +1,34 @@
-import { useState } from "react";
-import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react"
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-export default ({
+const Dropdown = ({
   options: optionsProps,
   label,
   onChange,
   defaultOption,
 }: {
-  options: Array<string>;
-  label: string;
-  onChange: (value: string) => void;
-  defaultOption: string;
+  options: Array<string>
+  label: string
+  onChange: (value: string) => void
+  defaultOption: string
 }) => {
-  const options = [defaultOption, ...optionsProps].filter(Boolean);
-  const [selectedValue, setSelectedValue] = useState(null);
-  const [showOptions, setShowOptions] = useState(false);
+  const options = [defaultOption, ...optionsProps].filter(Boolean)
+  const [selectedValue, setSelectedValue] = useState(null)
+  const [showOptions, setShowOptions] = useState(false)
 
-  const toggleShowOptions = () => setShowOptions(!showOptions);
+  const toggleShowOptions = () => setShowOptions(!showOptions)
 
   const setValue = (e) => {
-    e.stopPropagation();
-    setSelectedValue(e.target.value);
-    onChange(e.target.value);
-    toggleShowOptions();
-  };
+    e.stopPropagation()
+    setSelectedValue(e.target.value)
+    onChange(e.target.value)
+    toggleShowOptions()
+  }
 
   const onBlur = (e) => {
-    if (!(e.target.nodeName === "BUTTON")) setShowOptions(false);
-  };
+    if (!(e.target.nodeName === "BUTTON")) setShowOptions(false)
+  }
 
   return (
     <div>
@@ -46,5 +46,7 @@ export default ({
         </div>
       )}
     </div>
-  );
-};
+  )
+}
+
+export default Dropdown

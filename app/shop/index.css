@@ -23,7 +23,7 @@ h1 {
 }
 
 @media only screen and (max-width: 1080px) {
-  h1 {
+  .filter-title {
     display: none;
   }
   .shop-container {

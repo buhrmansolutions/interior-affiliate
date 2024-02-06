@@ -46,14 +46,16 @@ const Product = (product: Product, index: number) => {
         </Link>
       </div>
       <h4>{product.product_name}</h4>
-      <p>
-        {new Intl.NumberFormat("sv-SE", {
-          style: "currency",
-          currency: "SEK",
-          minimumFractionDigits: 0,
-          maximumFractionDigits: 2,
-        }).format(parseInt(product.search_price, 10))}
-      </p>
+      {product.search_price && (
+        <p>
+          {new Intl.NumberFormat("sv-SE", {
+            style: "currency",
+            currency: "SEK",
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 2,
+          }).format(parseInt(product.search_price, 10))}
+        </p>
+      )}
       {/* <DiscountBadge discount={product.discount} /> */}
     </div>
   )

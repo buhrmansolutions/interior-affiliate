@@ -55,7 +55,6 @@ const Products = () => {
 
   return (
     <div className="product-container">
-      <h1>Hitta golfprodukterna för att sänka din score!</h1>
       <div className="product-grid">{batch.map(Product)}</div>
       <PageSelector
         numberOfPages={numberOfPages}

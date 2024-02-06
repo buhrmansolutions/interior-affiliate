@@ -1,17 +1,68 @@
-import { Metadata } from "next";
-import Head from "next/head";
+import Image from "next/image"
+import Link from "next/link"
+import Product from "./components/product"
+import data from "./data"
+import { blogPosts } from "./blog/blogPosts"
+import "./index.css"
 
-export default function Home() {
+const BRANDS = [
+  {
+    merchant_image_url:
+      "https://www.awin1.com/cshow.php?s=3003483&v=16339&q=424590&r=1556248",
+    aw_deep_link:
+      "https://www.awin1.com/cread.php?s=3003483&v=16339&q=424590&r=1556248",
+    product_name: "Nike",
+  },
+]
+
+const Page = () => {
   return (
-    <main>
-      <Head>
-        <link
-          rel="icon"
-          href="/icon?<generated>"
-          type="image/png"
-          sizes="32x32"
-        />
-      </Head>
-    </main>
-  );
+    <div className="landing-page">
+      <div className="landing-content">
+        <div className="landing-image-container">
+          <Image
+            alt="golf image"
+            src="https://images.pexels.com/photos/5885314/pexels-photo-5885314.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            layout="fill"
+            objectFit="cover"
+          />
+          <div className="image-content">
+            <h1>
+              Välkommen till allyourgolf- där vi samlar golfprodukterna till
+              dig!
+            </h1>
+            <Link href="/shop">
+              <button className="primary-button">
+                Ta mig till produkterna!
+              </button>
+            </Link>
+          </div>
+        </div>
+        <div className="headings">
+          <h2>Kolla in våra senaste produkter</h2>
+          <Link href="/shop">Visa alla produkter</Link>
+        </div>
+        <div className="latest-products">{data.slice(0, 5).map(Product)}</div>
+        <div className="headings">
+          <h2>Nya märken på hemsidan</h2>
+        </div>
+        <div className="latest-products">
+          {BRANDS.slice(0, 5).map(Product as any)}
+        </div>
+        <div className="headings">
+          <h2>Senaste blogg-inlägget</h2>
+        </div>
+        <div className="latest-blog-post">
+          <h3>{blogPosts[0].title}</h3>
+          <h4>
+            av <span className="author">{blogPosts[0].author}</span> -{" "}
+            {blogPosts[0].date}
+          </h4>
+          <Link href="/blog">Läs mer</Link>
+        </div>
+      </div>
+    </div>
+  )
 }
+
+export default Page

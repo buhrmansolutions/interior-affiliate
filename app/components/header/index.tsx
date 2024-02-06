@@ -37,7 +37,7 @@ export default function Layout() {
     <div className="header-container">
       <div className="header">
         <div className="header-top-container">
-          <Link href="/shop">
+          <Link href="/">
             <h2>allyourgolf</h2>
           </Link>
           <button

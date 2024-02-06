@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 import "./index.css"
 
 const Nike = () => (
@@ -87,6 +88,9 @@ const BlogPost = (
           </div>
         )
       )}
+      <Link href="/shop">
+        <button className="primary-button">Ta mig till produkterna!</button>
+      </Link>
       {index < blogPosts.length - 1 && <div className="divider" />}
     </div>
   )

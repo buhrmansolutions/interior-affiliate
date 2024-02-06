@@ -14,11 +14,10 @@ export default function Home() {
         </div>
         <h2>Oops!</h2>
         <p>
-          It seems like you&apos;ve landed in the bunker of the internet.
-          Don&apos;t worry; even the best golfers hit a few unexpected hazards.
-          Swing back to our
-          <Link href="/shop"> homepage </Link>and let&apos;s get you back on the
-          fairway!
+          Det verkar som att du har hamnat i internetbunkern. Oroa dig inte,
+          även de bästa golfspelarna stöter på oväntade hinder ibland. Slå
+          tillbaka till vår <Link href="/shop">startsida</Link> så hjälper vi
+          dig att komma tillbaka på fairway!
         </p>
       </div>
     </main>

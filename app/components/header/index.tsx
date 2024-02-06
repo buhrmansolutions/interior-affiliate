@@ -21,6 +21,10 @@ const headings = [
     heading: "Blogg",
     path: "/blog",
   },
+  {
+    heading: "Sparade produkter",
+    path: "/saved-products",
+  },
 ]
 
 export default function Layout() {

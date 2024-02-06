@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 import "./index.css"
 
 const Page = () => {
@@ -55,6 +56,9 @@ const Page = () => {
           Trevlig shopping, och må dina drives vara raka och dina puttar
           magiska!
         </p>
+        <Link href="/shop">
+          <button className="primary-button">Ta mig till produkterna!</button>
+        </Link>
       </div>
     </div>
   )

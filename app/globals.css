@@ -16,7 +16,7 @@
   --heading2-size: 33px;
   --heading3-size: 24px;
   --heading4-size: 16px;
-  --heading5-size: 16px;
+  --heading5-size: 14px;
   --body-large-size: 16px;
   --body-medium-size: 14px;
   --body-small-size: 12px;
@@ -144,4 +144,13 @@ input {
 
 .not-found-content > p {
   text-align: center;
+}
+
+.primary-button {
+  padding: var(--margin-small);
+  background-color: var(--accent);
+  border-radius: var(--border-radius-small);
+  color: var(--white);
+  font-weight: var(--bold-weight);
+  margin-top: var(--margin-large);
 }

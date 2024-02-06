@@ -13,7 +13,7 @@ import enabledFilters, {
 } from "./config"
 import { useContext, useEffect, useState } from "react"
 import { ShopContext } from "@/app/shop/ShopContext"
-import { PRODUCTS } from "../products/products"
+import data from "../../data"
 
 export default function Layout() {
   const { setProducts } = useContext(ShopContext)
@@ -23,31 +23,34 @@ export default function Layout() {
   const [priceRangeFilter, setPriceRangeFilter] = useState(priceRange)
 
   useEffect(() => {
-    const filteredProducts = PRODUCTS.filter((product) => {
-      if (!product.title.toLowerCase().includes(searchFilter.toLowerCase())) {
+    const filteredProducts = data.filter((product) => {
+      if (
+        !product.product_name.toLowerCase().includes(searchFilter.toLowerCase())
+      ) {
         return false
       }
       if (
         shopByFilter !== "All categories" &&
-        !product.category.includes(shopByFilter)
+        !product.category_name.includes(shopByFilter)
       ) {
         return false
       }
       if (
         !(
-          product.price.amount >= priceRangeFilter.minPrice &&
-          product.price.amount <= priceRangeFilter.maxPrice
+          parseInt(product.search_price) >= priceRangeFilter.minPrice &&
+          parseInt(product.search_price) <= priceRangeFilter.maxPrice
         )
       ) {
         return false
       }
       return true
     })
+
     const sortedProducts = filteredProducts.sort((a, b) => {
       if (sortByFilter === "Price (Descending)")
-        return b.price.amount - a.price.amount
+        return parseInt(b.search_price) - parseInt(a.search_price)
       if (sortByFilter === "Price (Ascending)")
-        return a.price.amount - b.price.amount
+        return parseInt(a.search_price) - parseInt(b.search_price)
       if (sortByFilter === "Date added (Newest first)")
         return new Date(b.dateAdded).getTime() - new Date(a.dateAdded).getTime()
       if (sortByFilter === "Date added (Oldest first)")

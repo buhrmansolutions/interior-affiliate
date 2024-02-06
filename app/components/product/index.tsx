@@ -1,5 +1,5 @@
+import Link from "next/link"
 import Image from "next/image"
-import { useEffect, useState } from "react"
 import "./index.css"
 
 const DiscountBadge = ({ discount }: { discount: string }) => {
@@ -8,41 +8,49 @@ const DiscountBadge = ({ discount }: { discount: string }) => {
 }
 
 export type Product = {
-  id: number
-  title: string
-  price: { amount: number; currency: string }
+  aw_deep_link: string
+  product_name: string
+  aw_product_id: string
+  merchant_product_id: string
+  merchant_image_url: string
   description: string
-  category: string
-  img: string
+  merchant_category: string
+  search_price: string
+  category_name: string
+  aw_image_url: string
+  store_price: string
+  display_price: string
+  currency: string
   dateAdded: string
-  wide?: boolean
 }
 
 const Product = (product: Product, index: number) => {
   if (!product)
     return <div className="empty-product" key={`empty-product-${index}`} />
   return (
-    <div className="product" key={product.title}>
+    <div className="product" key={product.product_name}>
       <div className="image-container">
-        <Image
-          alt={product.title}
-          src={product.img}
-          width={0}
-          height={0}
-          sizes="100vw"
-          style={
-            product.wide
-              ? { width: "80%", height: "auto" }
-              : { width: "auto", height: "80%" }
-          }
-        />
+        <Link href={product.aw_deep_link} target="_blank">
+          <Image
+            alt={product.product_name}
+            src={product.merchant_image_url}
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={
+              false
+                ? { width: "80%", height: "auto" }
+                : { width: "auto", height: "80%" }
+            }
+          />
+        </Link>
       </div>
-      <h4>{product.title}</h4>
+      <h4>{product.product_name}</h4>
       <p>
         {new Intl.NumberFormat("sv-SE", {
           style: "currency",
-          currency: product.price.currency,
-        }).format(product.price.amount)}
+          currency: "SEK",
+        }).format(parseInt(product.search_price, 10))}
       </p>
       {/* <DiscountBadge discount={product.discount} /> */}
     </div>

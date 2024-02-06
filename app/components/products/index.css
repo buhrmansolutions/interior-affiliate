@@ -3,6 +3,14 @@
   /* height: calc(100vh - 99px); */
   /* overflow: scroll; */
 }
+
+.product-container > h1 {
+  font-size: var(--heading4-size);
+  color: var(--dark-gray);
+  margin-bottom: 0px;
+  margin-top: var(--margin-large);
+  position: absolute;
+}
 .product-grid {
   flex: 1;
   display: grid;

@@ -34,7 +34,7 @@ export default function Layout() {
       <div className="header">
         <div className="header-top-container">
           <Link href="/shop">
-            <h1>allyourgolf</h1>
+            <h2>allyourgolf</h2>
           </Link>
           <button
             className={`hamburger-menu-container ${

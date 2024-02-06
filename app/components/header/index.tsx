@@ -1,7 +1,7 @@
 "use client"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
-import { usePathname, useRouter } from "next/navigation"
+import { usePathname } from "next/navigation"
 import Link from "next/link"
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -25,14 +25,7 @@ const headings = [
 
 export default function Layout() {
   const pathname = usePathname()
-  const { push } = useRouter()
   const [showHamburgerMenu, setShowHamburgerMenu] = useState(false)
-
-  useEffect(() => {
-    if (pathname === "/") {
-      push(headings[0].path)
-    }
-  }, [])
 
   const toggleHamburgerMenu = () => setShowHamburgerMenu(!showHamburgerMenu)
 

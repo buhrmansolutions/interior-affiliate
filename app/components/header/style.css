@@ -45,6 +45,10 @@
   gap: 64px;
 }
 
+.desktop-headings-container > a > h2 {
+  font-size: var(--heading5-size);
+}
+
 .mobile-headings-container {
   display: none;
 }
@@ -106,6 +110,10 @@
 
   .mobile-headings-container > * {
     padding: 10px 0px;
+  }
+
+  .mobile-headings-container > a > h2 {
+    font-size: var(--heading5-size);
   }
 
   .mobile-headings-container > *:not(:last-child) {

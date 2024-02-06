@@ -5,8 +5,8 @@ const Page = () => {
   return (
     <div className="about-page">
       <div className="about-content">
-        <h1>Om oss</h1>
-        <h4>Vem vi är och varför vi gör det vi gör!</h4>
+        <h2>Om oss</h2>
+        <h3>Vem vi är och varför vi gör det vi gör!</h3>
         <p>
           Välkommen till allyourgolf, där din passion för golf möter
           bekvämlighet! Vi förstår glädjen och spänningen som kommer med att
@@ -17,7 +17,7 @@ const Page = () => {
           perfekta svingen.
         </p>
 
-        <h2>Upptäck glädjen i bekymmersfri golfshopping</h2>
+        <h3>Upptäck glädjen i bekymmersfri golfshopping</h3>
 
         <Image
           alt="golf image"
@@ -33,7 +33,7 @@ const Page = () => {
           mångfald av produkter för att tillgodose behoven hos varje
           hobbygolfare.
         </p>
-        <h2>Varför vi gör det vi gör</h2>
+        <h3>Varför vi gör det vi gör</h3>
         <Image
           alt="golf image"
           src="https://images.pexels.com/photos/1175015/pexels-photo-1175015.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"

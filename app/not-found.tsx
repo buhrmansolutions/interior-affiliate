@@ -12,7 +12,7 @@ export default function Home() {
             fill
           />
         </div>
-        <h1>Oops!</h1>
+        <h2>Oops!</h2>
         <p>
           It seems like you&apos;ve landed in the bunker of the internet.
           Don&apos;t worry; even the best golfers hit a few unexpected hazards.

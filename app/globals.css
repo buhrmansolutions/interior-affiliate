@@ -13,9 +13,9 @@
   --dark-gray: #707070;
   --error: #d82700;
   --heading-size: 33px;
-  --heading2-size: 26px;
+  --heading2-size: 33px;
   --heading3-size: 24px;
-  --heading4-size: 20px;
+  --heading4-size: 16px;
   --heading5-size: 16px;
   --body-large-size: 16px;
   --body-medium-size: 14px;
@@ -76,7 +76,7 @@ h4 {
   font-weight: var(--medium-weight);
 }
 h5 {
-  font-size: var(--headin5-size);
+  font-size: var(--heading5-size);
   font-weight: var(--regular-weight);
 }
 
@@ -136,7 +136,7 @@ input {
   max-width: 670px;
 }
 
-.not-found-content > h1 {
+.not-found-content > h2 {
   text-align: center;
   margin-top: var(--margin-very-large);
   margin-bottom: var(--margin-medium);

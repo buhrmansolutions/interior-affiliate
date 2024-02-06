@@ -69,10 +69,10 @@ const BlogPost = (
 ) => {
   return (
     <div className="blog-post">
-      <h1>{title}</h1>
-      <h5>
+      <h2>{title}</h2>
+      <h4>
         by <span className="author">{author}</span> - {date}
-      </h5>
+      </h4>
       {image && <Image fill src={image} alt="Blog post image" />}
       {Component && <Component />}
       <p>{introText}</p>
@@ -82,7 +82,7 @@ const BlogPost = (
             {sectionImage && (
               <Image fill src={sectionImage} alt="Section post image" />
             )}
-            <h2>{sectionTitle}</h2>
+            <h3>{sectionTitle}</h3>
             <p>{sectionText}</p>
           </div>
         )

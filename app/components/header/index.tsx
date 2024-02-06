@@ -49,7 +49,7 @@ export default function Layout() {
         <div className="desktop-headings-container">
           {headings.map(({ heading, path }) => (
             <Link href={path} key={heading}>
-              <h5>{heading}</h5>
+              <h2>{heading}</h2>
               {path === pathname && <div className="active-indicator" />}
             </Link>
           ))}
@@ -65,7 +65,7 @@ export default function Layout() {
               key={heading}
               onClick={() => setShowHamburgerMenu(false)}
             >
-              <h5>{path === pathname ? <b>{heading}</b> : heading}</h5>
+              <h2>{path === pathname ? <b>{heading}</b> : heading}</h2>
             </Link>
           ))}
         </div>

@@ -8,8 +8,12 @@
 .about-content {
   max-width: 670px;
 }
+h2 + h3 {
+  text-align: center;
+  font-size: var(--heading3-size);
+}
 
-.about-content > h1,
+.about-content > h2,
 .about-content > h4 {
   text-align: center;
 }
@@ -18,7 +22,7 @@
   margin-top: var(--margin-medium);
 }
 
-.about-content > h2 {
+.about-content > h3 {
   margin-top: var(--margin-large);
 }
 

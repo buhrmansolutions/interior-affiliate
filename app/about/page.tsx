@@ -5,18 +5,19 @@ const Page = () => {
   return (
     <div className="about-page">
       <div className="about-content">
-        <h1>About</h1>
-        <h4>Who we are and why we do what we do!</h4>
+        <h1>Om oss</h1>
+        <h4>Vem vi är och varför vi gör det vi gör!</h4>
         <p>
-          Welcome to allyourgolf, where your passion for golf meets convenience!
-          We understand the joy and excitement that comes with gearing up for
-          your next golf season or round. Our mission is simple yet impactful:
-          to curate a delightful collection of golf merchandise from various
-          trusted merchants, all in one place. We believe in making your golf
-          shopping experience as seamless and enjoyable as the perfect swing.
+          Välkommen till allyourgolf, där din passion för golf möter
+          bekvämlighet! Vi förstår glädjen och spänningen som kommer med att
+          förbereda sig för din nästa golfsäsong eller runda. Vårt uppdrag är
+          enkel men betydelsefull: att samla en härlig samling av golfprodukter
+          från olika pålitliga återförsäljare, allt på ett ställe. Vi tror på
+          att göra din golfshoppingupplevelse lika sömlös och njutbar som den
+          perfekta svingen.
         </p>
 
-        <h2>Discover the Joy of Hassle-Free Golf Shopping</h2>
+        <h2>Upptäck glädjen i bekymmersfri golfshopping</h2>
 
         <Image
           alt="golf image"
@@ -25,33 +26,34 @@ const Page = () => {
         />
 
         <p>
-          In the vast landscape of golf gear, finding the right equipment and
-          accessories can sometimes feel like searching for a needle in a
-          haystack. That&apos;s where we come in. allyourgolf is your go-to
-          destination for everything golf, carefully bringing together a diverse
-          array of products to cater to the needs of every hobby golfer.
+          I den vidsträckta världen av golfutrustning kan det ibland kännas som
+          att leta efter en nål i en höstack när du försöker hitta rätt
+          utrustning och tillbehör. Det är här vi kommer in. allyourgolf är din
+          främsta destination för allt inom golf och vi sammanför noggrant en
+          mångfald av produkter för att tillgodose behoven hos varje
+          hobbygolfare.
         </p>
-        <h2>Why We Do What We Do</h2>
+        <h2>Varför vi gör det vi gör</h2>
         <Image
           alt="golf image"
           src="https://images.pexels.com/photos/1175015/pexels-photo-1175015.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           fill
         />
         <p>
-          Our love for golf goes beyond the greens; it&apos;s about fostering a
-          community of golf enthusiasts who share the same excitement and
-          dedication. We believe that every swing should be backed by quality
-          gear that enhances your performance and enjoyment on the course.
+          Vår kärlek till golf sträcker sig bortom fairways; det handlar om att
+          främja en gemenskap av golfentusiaster som delar samma spänning och
+          engagemang. Vi tror att varje sving bör stödjas av kvalitetsutrustning
+          som förbättrar din prestation och njutning på banan.
           <br />
           <br />
-          At allyourgolf, we&apos;re not just a marketplace; we&apos;re your
-          golfing companion, simplifying your shopping journey so you can focus
-          on what you love most – playing golf. Join us in creating
-          unforgettable moments on the course, one swing at a time.
+          På allyourgolf är vi inte bara en marknadsplats; vi är din golfkamrat
+          som förenklar din shoppingresa så att du kan fokusera på det du älskar
+          mest – att spela golf. Gå med oss och skapa oförglömliga ögonblick på
+          banan, en sving åt gången.
           <br />
           <br />
-          Happy shopping, and may your drives be straight and your putts be
-          true!
+          Trevlig shopping, och må dina drives vara raka och dina puttar
+          magiska!
         </p>
       </div>
     </div>

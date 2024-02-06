@@ -41,6 +41,8 @@ const Products = () => {
       window.scrollTo({ top: 0, behavior: "smooth" })
     }
   }, [currentPage])
+
+  useEffect(() => setCurrentPage(0), [products])
   const numberOfPages = useMemo(
     () => Math.ceil(products.length / productsPerPage),
     [products, productsPerPage]

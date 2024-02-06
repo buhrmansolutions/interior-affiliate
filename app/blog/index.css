@@ -30,6 +30,17 @@
   color: var(--black);
 }
 
+.blog-post > a,
+.blog-post > a > img {
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.blog-post > a > img,
 .blog-post > img,
 .blog-post-section > img {
   margin-top: var(--margin-extra-large);
@@ -37,6 +48,7 @@
   border-radius: var(--border-radius-small);
 }
 
+.blog-post > a > img,
 .blog-post > img {
   margin-top: var(--margin-large);
   margin-bottom: var(--margin-extra-large);

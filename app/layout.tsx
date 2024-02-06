@@ -17,13 +17,15 @@ import Message from "./components/message"
 const inter = DM_Sans({ subsets: ["latin"], weight: "400" })
 
 export const metadata: Metadata = {
-  title: "allyourgolf",
-  description: "Din samlade golfbutik online",
+  title: "Din destination för Golfprodukter från Toppvarumärken",
+  description:
+    "Utforska det mest omfattande urvalet av golfprodukter från olika varumärken på AllYourGolf. Hitta allt du behöver för din golfupplevelse på ett och samma ställe",
   keywords:
-    "Golf, golfshop, golfbutik, allyourgolf, golfprodukter, online, golfprylar",
+    "Golfkläder, golfskor, golfutrustning, golfaccessoarer, varumärkesgolfprodukter, toppvarumärken, golfshopping, AllYourGolf",
   openGraph: {
-    title: "allyourgolf",
-    description: "Din samlade golfbutik online",
+    title: "Din destination för Golfprodukter från Toppvarumärken",
+    description:
+      "Upptäck det bästa inom golfshopping på AllYourGolf.com. Vi samlar premium golfprodukter från olika varumärken för att göra din golfupplevelse enklare och roligare.",
     siteName: "allyourgolf.com",
   },
 }

@@ -10,15 +10,15 @@ import "./style.css"
 
 const headings = [
   {
-    heading: "Shop",
+    heading: "Butik",
     path: "/shop",
   },
   {
-    heading: "Our Story",
+    heading: "Om oss",
     path: "/about",
   },
   {
-    heading: "Blog",
+    heading: "Blogg",
     path: "/blog",
   },
 ]

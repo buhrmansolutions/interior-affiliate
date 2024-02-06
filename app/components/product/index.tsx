@@ -50,6 +50,8 @@ const Product = (product: Product, index: number) => {
         {new Intl.NumberFormat("sv-SE", {
           style: "currency",
           currency: "SEK",
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 2,
         }).format(parseInt(product.search_price, 10))}
       </p>
       {/* <DiscountBadge discount={product.discount} /> */}

@@ -13,7 +13,7 @@ type Props = {
 }
 
 const PriceRangeSlider = ({ minPrice, maxPrice, onChange }: Props) => {
-  const currency = "USD"
+  const currency = "SEK"
   const steps = (maxPrice - minPrice) / 100
   const [from, setFrom] = useState(minPrice)
   const [to, setTo] = useState(maxPrice)
@@ -119,15 +119,19 @@ const PriceRangeSlider = ({ minPrice, maxPrice, onChange }: Props) => {
         />
       </div>
       <div className="label">
-        Price:{" "}
+        Pris:{" "}
         {new Intl.NumberFormat("sv-SE", {
           style: "currency",
           currency: currency,
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 2,
         }).format(from)}{" "}
         -{" "}
         {new Intl.NumberFormat("sv-SE", {
           style: "currency",
           currency: currency,
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 2,
         }).format(to)}
       </div>
     </div>

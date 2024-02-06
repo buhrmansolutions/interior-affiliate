@@ -30,7 +30,7 @@ export default function Layout() {
         return false
       }
       if (
-        shopByFilter !== "All categories" &&
+        shopByFilter !== "Alla kategorier" &&
         !product.category_name.includes(shopByFilter)
       ) {
         return false
@@ -47,13 +47,13 @@ export default function Layout() {
     })
 
     const sortedProducts = filteredProducts.sort((a, b) => {
-      if (sortByFilter === "Price (Descending)")
+      if (sortByFilter === "Sjunkande pris")
         return parseInt(b.search_price) - parseInt(a.search_price)
-      if (sortByFilter === "Price (Ascending)")
+      if (sortByFilter === "Ökande pris")
         return parseInt(a.search_price) - parseInt(b.search_price)
-      if (sortByFilter === "Date added (Newest first)")
+      if (sortByFilter === "Nyast först")
         return new Date(b.dateAdded).getTime() - new Date(a.dateAdded).getTime()
-      if (sortByFilter === "Date added (Oldest first)")
+      if (sortByFilter === "Äldst först")
         return new Date(a.dateAdded).getTime() - new Date(b.dateAdded).getTime()
       return -1
     })
@@ -66,7 +66,7 @@ export default function Layout() {
         <div className="input-container">
           <input
             type="text"
-            placeholder="Search..."
+            placeholder="Sök..."
             onChange={(e) => setSearchFilter(e.target.value)}
           />
           <FontAwesomeIcon icon={faMagnifyingGlass} />
@@ -75,15 +75,15 @@ export default function Layout() {
       {enabledFilters.shopBy && (
         <Dropdown
           options={shopByOptions}
-          label="Shop by"
+          label="Shoppingkategori"
           onChange={setShopByFilter}
-          defaultOption="All categories"
+          defaultOption="Alla kategorier"
         />
       )}
       {enabledFilters.sortBy && (
         <Dropdown
           options={sortByOptions}
-          label="Sort by"
+          label="Sortering"
           onChange={setSortByFilter}
         />
       )}

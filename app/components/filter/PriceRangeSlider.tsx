@@ -20,18 +20,17 @@ const PriceRangeSlider = ({ minPrice, maxPrice, onChange }: Props) => {
 
   const onSliderClick: MouseEventHandler<HTMLDivElement> = (e) => {
     if ((e.target as HTMLDivElement).id === "slider-distance") {
-      const position = e.clientX - (e.target as HTMLDivElement).offsetLeft
+      const OFFSET_LEFT = window.innerWidth < 1080 ? 20 : 100
+      const position = e.clientX - OFFSET_LEFT
       const width = (e.target as HTMLDivElement).offsetWidth
       const value = minPrice + (position / width) * (maxPrice - minPrice)
+
       const shouldChangeFrom =
         Math.abs(from - value) < Math.abs(to - value) ||
         (from === to && value < from)
       if (shouldChangeFrom) {
         setFrom(value)
-        const percentageValue = Math.max(
-          0,
-          100 * (value / (maxPrice - minPrice))
-        )
+        const percentageValue = Math.max(0, 100 * (position / width))
 
         document.getElementById("from-handle")!.style.left =
           percentageValue + "%"
@@ -40,10 +39,7 @@ const PriceRangeSlider = ({ minPrice, maxPrice, onChange }: Props) => {
           (100 * (to - value)) / (maxPrice - minPrice) + "%"
       } else {
         setTo(value)
-        const percentageValue = Math.min(
-          100,
-          100 * (value / (maxPrice - minPrice))
-        )
+        const percentageValue = Math.min(100, 100 * (position / width))
 
         document.getElementById("to-handle")!.style.left = percentageValue + "%"
         document.getElementById("range")!.style.right = percentageValue + "%"

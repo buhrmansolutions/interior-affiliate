@@ -17,6 +17,7 @@ const Products = () => {
       ),
     [currentPage, products, productsPerPage]
   )
+  console.log(batch.length, productsPerPage)
 
   useEffect(() => {
     const MOBILE_THRESHOLD_WIDTH = 1080
@@ -25,7 +26,7 @@ const Products = () => {
     const NUMBER_OF_ROWS = IS_MOBILE ? 16 : 4
     const ITEM_WIDTH = 300
     const GAP_WIDTH = 39
-    const GRID_WIDTH = WINDOW_WIDTH - (IS_MOBILE ? 40 : 400 - 100 * 2)
+    const GRID_WIDTH = WINDOW_WIDTH - (IS_MOBILE ? 40 : 400 + 100 * 2)
     const SPACE_LEFT_FOR_ITEM =
       GRID_WIDTH % (ITEM_WIDTH + GAP_WIDTH) > ITEM_WIDTH
     const ITEMS_PER_ROW = IS_MOBILE

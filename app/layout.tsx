@@ -19,13 +19,13 @@ const inter = DM_Sans({ subsets: ["latin"], weight: "400" })
 export const metadata: Metadata = {
   title: "Din destination för Golfprodukter från Toppvarumärken",
   description:
-    "Utforska det mest omfattande urvalet av golfprodukter från olika varumärken på AllYourGolf. Hitta allt du behöver för din golfupplevelse på ett och samma ställe",
+    "Utforska det mest omfattande urvalet av golfprodukter från olika varumärken på allyourgolf. Hitta allt du behöver för din golfupplevelse på ett och samma ställe",
   keywords:
-    "Golfkläder, golfskor, golfutrustning, golfaccessoarer, varumärkesgolfprodukter, toppvarumärken, golfshopping, AllYourGolf",
+    "Golfkläder, golfskor, golfutrustning, golfaccessoarer, varumärkesgolfprodukter, toppvarumärken, golfshopping, allyourgolf",
   openGraph: {
     title: "Din destination för Golfprodukter från Toppvarumärken",
     description:
-      "Upptäck det bästa inom golfshopping på AllYourGolf.com. Vi samlar premium golfprodukter från olika varumärken för att göra din golfupplevelse enklare och roligare.",
+      "Upptäck det bästa inom golfshopping på allyourgolf.com. Vi samlar premium golfprodukter från olika varumärken för att göra din golfupplevelse enklare och roligare.",
     siteName: "allyourgolf.com",
   },
 }

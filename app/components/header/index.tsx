@@ -50,16 +50,8 @@ export default function Layout() {
             <FontAwesomeIcon icon={faTimes} className="menu-icon-cross" />
           </button>
         </div>
-        <div className="desktop-headings-container">
-          {headings.map(({ heading, path }) => (
-            <Link href={path} key={heading}>
-              <h2>{heading}</h2>
-              {path === pathname && <div className="active-indicator" />}
-            </Link>
-          ))}
-        </div>
         <div
-          className={`mobile-headings-container ${
+          className={`headings-container ${
             showHamburgerMenu ? "active" : "inActive"
           }`}
         >
@@ -70,6 +62,7 @@ export default function Layout() {
               onClick={() => setShowHamburgerMenu(false)}
             >
               <h2>{path === pathname ? <b>{heading}</b> : heading}</h2>
+              {path === pathname && <div className="active-indicator" />}
             </Link>
           ))}
         </div>

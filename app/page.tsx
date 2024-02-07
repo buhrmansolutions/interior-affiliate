@@ -27,10 +27,11 @@ const Page = () => {
             objectFit="cover"
           />
           <div className="image-content">
-            <h1>
-              Välkommen till allyourgolf- där vi samlar golfprodukterna till
-              dig!
-            </h1>
+            <h1>allyourgolf - Premium Golf på Ett Ställe!</h1>
+            <p>
+              Upptäck det bästa inom golf. Kläder, skor, utrustning. Gör varje
+              runda minnesvärd. Välkommen till allyourgolf!
+            </p>
             <Link href="/shop">
               <button className="primary-button">
                 Ta mig till produkterna!
@@ -39,12 +40,12 @@ const Page = () => {
           </div>
         </div>
         <div className="headings">
-          <h2>Kolla in våra senaste produkter</h2>
+          <h2>Nya produkter</h2>
           <Link href="/shop">Visa alla produkter</Link>
         </div>
         <div className="latest-products">{data.slice(0, 5).map(Product)}</div>
         <div className="headings">
-          <h2>Nya märken på hemsidan</h2>
+          <h2>Nya märken</h2>
         </div>
         <div className="latest-products">
           {BRANDS.slice(0, 5).map(Product as any)}

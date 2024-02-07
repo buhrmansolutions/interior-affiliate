@@ -72,6 +72,9 @@
   color: var(--accent);
 }
 @media only screen and (max-width: 1080px) {
+  .headings > h2 {
+    font-weight: 700;
+  }
   .landing-page {
     margin-top: var(--margin-medium);
     padding: 0px;

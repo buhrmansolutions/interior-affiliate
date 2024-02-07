@@ -45,7 +45,7 @@ const Page = () => {
         </div>
         <div className="latest-products">{data.slice(0, 5).map(Product)}</div>
         <div className="headings">
-          <h2>Nya märken</h2>
+          <h2>Nya varumärken</h2>
         </div>
         <div className="latest-products">
           {BRANDS.slice(0, 5).map(Product as any)}

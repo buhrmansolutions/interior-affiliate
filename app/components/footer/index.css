@@ -7,8 +7,15 @@
   color: var(--dark-gray);
   margin-top: 200px;
 }
-
+.footer > a > svg {
+  width: 20px;
+  position: absolute;
+  color: var(--light-gray);
+}
 @media only screen and (max-width: 1080px) {
+  .footer > a > svg {
+    margin-top: 10px;
+  }
   .footer {
     padding: var(--margin-large);
     margin-top: var(--margin-large);

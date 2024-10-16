@@ -1,5 +1,5 @@
 .product {
-  max-width: 300px;
+  max-width: var(--product-card-width);
   position: relative;
   cursor: pointer;
 }
@@ -8,8 +8,8 @@
 }
 
 .image-container {
-  width: 300px;
-  height: 300px;
+  width: var(--product-card-width);
+  height: var(--product-card-width);
   border-radius: var(--border-radius-small);
   overflow: hidden;
   display: flex;
@@ -47,6 +47,27 @@
   border-radius: var(--border-radius-extra-small);
   color: var(--white);
   font-size: var(--body-small-size);
+}
+
+.save-icon {
+  position: absolute;
+  top: var(--margin-medium-small);
+  right: var(--margin-medium-small);
+  padding: var(--margin-extra-extra-small) var(--margin-extra-small);
+  border-radius: var(--border-radius-extra-small);
+  font-size: var(--body-small-size);
+  z-index: 100;
+}
+.save-icon > svg {
+  color: var(--light-gray);
+}
+
+.save-icon:hover > svg {
+  color: var(--dark-gray);
+}
+
+.save-icon.saved > svg {
+  color: var(--dark-gray);
 }
 
 @media only screen and (max-width: 1080px) {

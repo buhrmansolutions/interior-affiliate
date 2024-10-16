@@ -1,9 +1,10 @@
-import Image from "next/image"
-import Link from "next/link"
-import Product from "./components/product"
-import data from "./data"
-import { blogPosts } from "./blog/blogPosts"
-import "./index.css"
+"use client";
+import Image from "next/image";
+import Link from "next/link";
+import Product from "./components/product";
+import data from "./data";
+import { blogPosts } from "./blog/blogPosts";
+import "./index.css";
 
 const BRANDS = [
   {
@@ -13,7 +14,7 @@ const BRANDS = [
       "https://www.awin1.com/cread.php?s=3003483&v=16339&q=424590&r=1556248",
     product_name: "Nike",
   },
-]
+];
 
 const Page = () => {
   return (
@@ -63,7 +64,7 @@ const Page = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;

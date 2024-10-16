@@ -1,4 +1,4 @@
-import { CATEGORIES, default as data } from "../../data"
+import { CATEGORIES, default as data } from "../../data";
 const config = {
   search: true,
   priceRange: true,
@@ -6,16 +6,16 @@ const config = {
   shopBy: true,
   onSaleSwitch: false,
   inStockSwitch: false,
-}
+};
 
-export default config
+export default config;
 
 export const sortByOptions = [
-  "Sjunkande pris",
-  "Ökande pris",
+  "Pris: Högt till lågt",
+  "Pris: Lågt till högt",
   "Nyast först",
   "Äldst först",
-]
+];
 
 export const priceRange = data.reduce(
   (prev, curr) => ({
@@ -29,7 +29,7 @@ export const priceRange = data.reduce(
         : prev.maxPrice,
   }),
   { minPrice: 9999, maxPrice: 0 }
-)
+);
 export const shopByOptions = Object.keys(CATEGORIES).map(
   (key) => CATEGORIES[key]
-)
+);

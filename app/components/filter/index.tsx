@@ -1,39 +1,39 @@
-"use client"
+"use client";
 
-import "./style.css"
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import PriceRangeSlider from "./PriceRangeSlider"
-import Dropdown from "./Dropdown"
-import Switch from "./Switch"
+import "./style.css";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import PriceRangeSlider from "./PriceRangeSlider";
+import Dropdown from "./Dropdown";
+import Switch from "./Switch";
 import enabledFilters, {
   sortByOptions,
   shopByOptions,
   priceRange,
-} from "./config"
-import { useContext, useEffect, useState } from "react"
-import { ShopContext } from "@/app/shop/ShopContext"
-import data from "../../data"
+} from "./config";
+import { useContext, useEffect, useState } from "react";
+import { ShopContext } from "@/app/shop/ShopContext";
+import data from "../../data";
 
 export default function Layout() {
-  const { setProducts } = useContext(ShopContext)
-  const [searchFilter, setSearchFilter] = useState("")
-  const [shopByFilter, setShopByFilter] = useState("")
-  const [sortByFilter, setSortByFilter] = useState("")
-  const [priceRangeFilter, setPriceRangeFilter] = useState(priceRange)
+  const { setProducts } = useContext(ShopContext);
+  const [searchFilter, setSearchFilter] = useState("");
+  const [shopByFilter, setShopByFilter] = useState("");
+  const [sortByFilter, setSortByFilter] = useState("");
+  const [priceRangeFilter, setPriceRangeFilter] = useState(priceRange);
 
   useEffect(() => {
     const filteredProducts = data.filter((product) => {
       if (
         !product.product_name.toLowerCase().includes(searchFilter.toLowerCase())
       ) {
-        return false
+        return false;
       }
       if (
         shopByFilter !== "Alla kategorier" &&
         !product.category_name.includes(shopByFilter)
       ) {
-        return false
+        return false;
       }
       if (
         !(
@@ -41,24 +41,28 @@ export default function Layout() {
           parseInt(product.search_price) <= priceRangeFilter.maxPrice
         )
       ) {
-        return false
+        return false;
       }
-      return true
-    })
+      return true;
+    });
 
     const sortedProducts = filteredProducts.sort((a, b) => {
-      if (sortByFilter === "Sjunkande pris")
-        return parseInt(b.search_price) - parseInt(a.search_price)
-      if (sortByFilter === "Ökande pris")
-        return parseInt(a.search_price) - parseInt(b.search_price)
+      if (sortByFilter === "Pris: Högt till lågt")
+        return parseInt(b.search_price) - parseInt(a.search_price);
+      if (sortByFilter === "Pris: Lågt till högt")
+        return parseInt(a.search_price) - parseInt(b.search_price);
       if (sortByFilter === "Nyast först")
-        return new Date(b.dateAdded).getTime() - new Date(a.dateAdded).getTime()
+        return (
+          new Date(b.dateAdded).getTime() - new Date(a.dateAdded).getTime()
+        );
       if (sortByFilter === "Äldst först")
-        return new Date(a.dateAdded).getTime() - new Date(b.dateAdded).getTime()
-      return -1
-    })
-    setProducts(sortedProducts)
-  }, [searchFilter, shopByFilter, sortByFilter, priceRangeFilter, setProducts])
+        return (
+          new Date(a.dateAdded).getTime() - new Date(b.dateAdded).getTime()
+        );
+      return -1;
+    });
+    setProducts(sortedProducts);
+  }, [searchFilter, shopByFilter, sortByFilter, priceRangeFilter, setProducts]);
 
   return (
     <div className="filter">
@@ -91,5 +95,5 @@ export default function Layout() {
         <PriceRangeSlider {...priceRange} onChange={setPriceRangeFilter} />
       )}
     </div>
-  )
+  );
 }

@@ -1,5 +1,5 @@
 .filter {
-  width: 300px;
+  width: var(--product-card-width);
   display: flex;
   flex-direction: column;
   gap: var(--body-large-size);

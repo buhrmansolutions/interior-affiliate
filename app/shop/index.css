@@ -19,7 +19,7 @@ h1 {
 }
 
 .filter-container + * {
-  margin-left: calc(400px + var(--margin-huge));
+  margin-left: calc(400px + var(--margin-large));
 }
 
 @media only screen and (max-width: 1080px) {

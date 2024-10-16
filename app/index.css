@@ -22,12 +22,16 @@
   position: relative;
   width: 100%;
 }
+.landing-image-container > img {
+  filter: brightness(30%);
+}
 .image-content {
   position: absolute;
   bottom: var(--margin-almost-huge);
   left: var(--margin-almost-huge);
   right: var(--margin-almost-huge);
   /* max-width: calc(100vw - 2 * var(--margin-almost-huge)-2 * var(--margin-huge)); */
+  background-size: cover;
 }
 .image-content > h1,
 .image-content > p {

@@ -1,12 +1,12 @@
-"use client"
-import { useState } from "react"
+"use client";
+import { useState } from "react";
 
-import { usePathname } from "next/navigation"
-import Link from "next/link"
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { usePathname } from "next/navigation";
+import Link from "next/link";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import "./style.css"
+import "./style.css";
 
 const headings = [
   {
@@ -25,20 +25,20 @@ const headings = [
     heading: "Sparade produkter",
     path: "/saved-products",
   },
-]
+];
 
 export default function Layout() {
-  const pathname = usePathname()
-  const [showHamburgerMenu, setShowHamburgerMenu] = useState(false)
+  const pathname = usePathname();
+  const [showHamburgerMenu, setShowHamburgerMenu] = useState(false);
 
-  const toggleHamburgerMenu = () => setShowHamburgerMenu(!showHamburgerMenu)
+  const toggleHamburgerMenu = () => setShowHamburgerMenu(!showHamburgerMenu);
 
   return (
     <div className="header-container">
       <div className="header">
         <div className="header-top-container">
           <Link href="/">
-            <h2>allyourgolf</h2>
+            <h2>sovrumsinredning</h2>
           </Link>
           <button
             className={`hamburger-menu-container ${
@@ -69,5 +69,5 @@ export default function Layout() {
         <div className="empty-element" />
       </div>
     </div>
-  )
+  );
 }

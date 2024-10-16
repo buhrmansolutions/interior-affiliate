@@ -22,16 +22,17 @@ const Page = () => {
       <div className="landing-content">
         <div className="landing-image-container">
           <Image
-            alt="golf image"
-            src="https://images.pexels.com/photos/5885314/pexels-photo-5885314.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            alt="bed image"
+            src="https://images.pexels.com/photos/90319/pexels-photo-90319.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
             layout="fill"
             objectFit="cover"
           />
           <div className="image-content">
-            <h1>allyourgolf - Premium Golf på Ett Ställe!</h1>
+            <h1>sovrumsinredning - Premium sovrumsmöbler på ett ställe!</h1>
             <p>
-              Upptäck det bästa inom golf. Kläder, skor, utrustning. Gör varje
-              runda minnesvärd. Välkommen till allyourgolf!
+              Upptäck det bästa inom sovrumsinredning. Sängbord, lakan,
+              belysning. Gör varje natt minnesvärd. Välkommen till
+              sovrumsinredning!
             </p>
             <Link href="/shop">
               <button className="primary-button">

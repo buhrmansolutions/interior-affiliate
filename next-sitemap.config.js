@@ -1,4 +1,4 @@
 module.exports = {
-  siteUrl: "https://allyourgolf.com",
+  siteUrl: "https://sovrumsinredning.com",
   generateRobotsTxt: true, // (optional)
-}
+};

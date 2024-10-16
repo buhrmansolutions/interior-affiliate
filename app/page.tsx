@@ -46,12 +46,12 @@ const Page = () => {
           <Link href="/shop">Visa alla produkter</Link>
         </div>
         <div className="latest-products">{data.slice(0, 5).map(Product)}</div>
-        <div className="headings">
+        {/* <div className="headings">
           <h2>Nya varumärken</h2>
         </div>
         <div className="latest-products">
           {BRANDS.slice(0, 5).map(Product as any)}
-        </div>
+        </div> */}
         <div className="headings">
           <h2>Senaste blogg-inlägget</h2>
         </div>

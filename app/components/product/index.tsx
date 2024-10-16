@@ -11,7 +11,7 @@ const DiscountBadge = ({ discount }: { discount: string }) => {
   return <div className="discount-badge">- {discount}</div>;
 };
 
-const Save = ({ product }) => {
+const Save = ({ product }: any) => {
   const [isSaved, setIsSaved] = useState(false);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const Save = ({ product }) => {
     );
 
     const isSaved = currentLocalStorage.some(
-      ({ merchant_product_id }) =>
+      ({ merchant_product_id }: any) =>
         merchant_product_id === product.merchant_product_id
     );
     setIsSaved(isSaved), [];
@@ -40,7 +40,7 @@ const Save = ({ product }) => {
       localStorage.getItem("savedProducts") || "[]"
     );
     const newStorage = currentLocalStorage.filter(
-      ({ merchant_product_id }) =>
+      ({ merchant_product_id }: any) =>
         merchant_product_id !== product.merchant_product_id
     );
     localStorage.setItem("savedProducts", JSON.stringify(newStorage));

@@ -6,28 +6,18 @@ import Products from "../components/products";
 import Link from "next/link";
 import "./index.css";
 
-type Props = {
-  title: string;
-  date: string;
-  author: string;
-  image?: string;
-  introText: string;
-  sections: Array<{ title: string; text: string; image?: string }>;
-  Component?: any;
-};
-
 const Page = () => {
   const [savedProducts, setSavedProducts] = useState([]);
 
   useEffect(() => {
     const updateData = () => {
       setSavedProducts(
-        JSON.parse(localStorage.getItem("savedProducts") || "[]")
+        JSON.parse(localStorage?.getItem("savedProducts") || "[]")
       );
     };
 
     updateData();
-  }, [localStorage.getItem("savedProducts")]);
+  }, []);
 
   if (savedProducts.length === 0) {
     return (
